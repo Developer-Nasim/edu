@@ -1,12 +1,20 @@
 /*   Theme default css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400; 
-  color: #666666;
-  font-size: 16px; }
+  color: #111111;
+  font-size: 16px; 
+  overflow-x: hidden;
+  background: #fff;
+}
 
-  
+a{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+}
 button {
   cursor: pointer; }
 
@@ -35,10 +43,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif; 
-  color: #1d2172;
+  font-family: 'Inter', sans-serif; 
+  color: #003A68;
   margin-top: 0px; 
-  font-weight: 500;
+  font-weight: 700;
   text-transform: normal;
  }
 
@@ -85,145 +93,286 @@ li {
  
 
 
-.header-area {
-  padding: 30px 0; 
-  width: 100%;
-  z-index: 99; 
-  background: #ff7c47;
-}
-.menu-area nav ul li {
-  list-style: none;
-  display: inline-block;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* administrator 1st page css START */
+
+
+.dasboard-area.adm1 {
+  display: flex;
+  justify-content: space-between;
 }
 
-.menu-area nav ul li a {
-  font-size: 16px;
-  color: #000; 
-  display: inline-block;
-  margin-left: 60px;
-  position: relative;
-}
-.menu-area nav ul li a.theme-btn {
-  background: white;
-  display: inline-block;
-  padding: 0 50px;
-  height: 48px;
-  color: #ff4900;
-  line-height: 48px;
-  border-radius: 30px;
-  border: 2px solid white;
-  transition: .3s;
-}  
-/* humbergar */
-.bar a {
-  width: 35px;
-  height: 35px;
-  float: right;
-  position: relative;
-} 
-.bar a span {
+.dasboard-area.adm1 .dashLeft {
   width: 100%;
-  height: 3px;
-  background: #fff;
-  display: block;
-  position: relative;
-  top: 17px;
-  border-radius: 30px;
-  transition: .3s;
-} 
-.bar a span:before {left: 0;content: "";position: absolute;width: 100%;height: 100%;background: #fff;bottom: 10px;border-radius: 30px;transition: .3s;} 
-.bar a span:after {left: 0;content: "";position: absolute;width: 100%;height: 100%;background: #fff;bottom: -10px;border-radius: 30px;transition: .3s;}
- 
-/* humbarger END */
- 
+}
 
-/* mobile-menu START */
-.mobile-menu {
+.dashLeft {
+  width: 100%;
+  position: relative;
+  padding: 50px 30px 50px 100px;
+}
+
+.dashLeft-menu {
   position: fixed;
-  width: 320px;
-  height: 100vh;
-  background: #ffffff;
-  z-index: 99;
-  box-shadow: 0px 0px 9px -1px #737373;
-  top: 0;
+  top: 50%;
   left: 0;
-  transition: .3s;
-  margin-left: -400px;
-  padding-left: 40px;
-  padding-top: 100px;
+  transform: translateY(-50%);
 }
-.siteBar{
-  margin-left: 0; 
-}
-.mobile-menu ul#pills-tab {
-  margin-top: 90px;
-  margin-bottom: 35px !important;
-  display: block;
-}
-.mobile-menu  nav ul li {
-  list-style: none;
+
+.dashLeft-menu li {
   display: block;
 }
 
-.mobile-menu nav ul li a {
-  color: #272835;
-  font-size: 16px;
-  line-height: 40px;
-  transition: .3s;
+.dashLeft-menu li a {
+  padding: 15px 20px;
+  display: block;
+  position: relative;
 }
 
-.mobile-menu nav ul li a:hover { 
-  color: #ff4900;
-}
-
-.mobile-menu ul#pills-tab li {
-  display: inline-block;
-}
-
-.mobile-menu ul#pills-tab li a {
-  color: #272835;
-  font-size: 15px;
-} 
-.mobile-menu a.theme-btn {
-  margin-top: 60px;
-  margin-left: 0;
-} 
-.mobile-menu a.theme-btn {
-  margin-top: 60px;
-  margin-left: 0;
-  height: 45px;
-  line-height: 45px;
-}
-.mobile-menu .user a {
-    display: block;
-    width: 100%;
-    padding: 0;
-    color: #272835;
-    line-height: 40px;
-    font-size: 16px;
-}
-
-.mobile-menu .user {
-    display: block;
-}
-
-.mobile-menu .user a:hover {
-    background: none;
-    opacity: .5;
-}
-.mobile-menu a.bars {
+.dashLeft-menu li a span {
   position: absolute;
-  right: 20px;
-  top: 15px;
-  width: 40px;
-  height: 40px;
-  background: #ff4900;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  font-size: 22px;
-  color: #fff;
-  box-shadow: 0px 0px 17px -2px #0000004a;
+  top: 50%;
+  left: 45px;
+  transform: translateY(-50%);
+  padding: 6px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+
+/* White Gray */
+  color: #F9F9FB;
+  background: #005395;
+  box-shadow: 2px 2px 10px rgba(124, 124, 124, 0.25);
+  border-radius: 4px;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
 }
 
-/* Header section END */
+.dashLeft-menu li a:after {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #DA4167;
+  z-index: 2;
+  border-radius: 0px 10px 10px 0;
+  transition: .3s;
+  opacity: 0;
+}
+
+.dashLeft-menu li a:hover:after,.dashLeft-menu li a.active:after {
+  opacity: 1;
+}
+
+.dashLeft-menu li a:hover span {
+  opacity: 1;
+  visibility: visible;
+  left: 55px;
+}
+.dashLeft-content .title {
+  margin-bottom: 50px;
+}
+
+.dashLeft-content .title h5 {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+
+/* Cerise */
+  color: #DA4167;
+  margin-bottom: 15px;
+}
+
+.dashLeft-content .title h2 {
+  font-size: 36px;
+  line-height: 45px;
+/* identical to box height, or 125% */
+  letter-spacing: 1px;
+
+/* Darkest blue */
+  color: #003A68;
+}
+.adminCounts {
+  display: flex;
+  align-items: flex-start; 
+}
+
+.adminCounts .adminCountsLeft {
+  display: flex;
+  align-items: center;
+  background: #F9F9FB;
+  border-radius: 8px;
+}
+
+.adminCounts .adminCountsLeft .adcBlk {
+  padding: 30px;
+  text-align: center;
+}
+
+.adminCounts .adcBlk > span {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.adminCounts .adminCountsLeft .adcBlk p {
+  font-size: 20px;
+  line-height: 40px;
+/* identical to box height, or 200% */
+  color: #000000;
+  margin: 0;
+}
+
+.adminCounts 
+.adminCountsRight {
+  margin-left: 30px;
+  background: #F9F9FB;
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+}
+
+.adminCounts .adminCountsRight .adcBlk ul li {
+  font-size: 16px;
+  line-height: 24px;
+/* identical to box height, or 150% */
+  letter-spacing: 0.3px;
+  color: #000000;
+  margin-top: 4px;
+}
+
+.adminCounts .adminCountsRight .adcBlk ul li span {
+  margin-right: 15px;
+}
+
+
+
+
+
+/* DashRight css STARTED */
+
+.dashRight {
+  background: #EDF3F5;
+  padding: 30px 40px;
+}
+
+.dashRight-wrps h4.searchWithDate {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+
+/* Darkest blue */
+  color: #003A68;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.dashRight-wrps h4.searchWithDate img {
+  margin-right: 25px;
+}
+
+.sideNotifs {
+  max-height: 325px;
+  overflow: auto;
+}
+.sideNotifs::-webkit-scrollbar{
+  width: 0;
+}
+.ntfBlk {
+  background: #FFFFFF;
+  box-shadow: 2px 2px 5px rgba(163, 163, 169, 0.1);
+  border-radius: 8px;
+  padding: 24px 32px;
+  margin-bottom: 15px;
+}
+
+.ntfBlk h5 {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.ntfBlk p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+/* or 150% */
+  letter-spacing: 0.3px;
+  color: #000000;
+  margin: 0;
+}
+
+a.clearAllNtf {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline;
+
+/* Dark blue */
+  color: #005395;
+  display: block;
+  margin-top: 25px;
+}
+
+
+
+
+
+/* administrator 1st page css END && DD PAGE css STARTED */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

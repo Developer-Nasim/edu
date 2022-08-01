@@ -30,3 +30,14 @@
 .container {width:450px}
  
 }
+/* Big screen :1200px. */
+@media (max-width: 1150px) {
+    .dashRight { 
+        /* position: absolute;
+        right: 0;
+        top: 0;
+        margin-right: -400px;
+        width: 380px; */
+    }
+
+}

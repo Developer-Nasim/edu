@@ -17,62 +17,213 @@
         <link rel="stylesheet" href="assets/css/fontawesome.min.css">  
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
+        <style> 
+           .calendar {
+                width: 90%;
+                margin: auto;
+                margin-bottom: 30px;
+                overflow: hidden;
+            }
+            .ui-datepicker-header {
+                height: 32px;
+                margin-bottom: 10px;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 32px;
+                position: relative;
+                color: #005395;
+            }
+            .ui-datepicker-prev,
+            .ui-datepicker-next {
+                width: 11px;
+                height: 11px;
+                cursor: pointer;
+                position: absolute;
+                color: transparent;
+                overflow: hidden;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(-360deg);
+                background-image: url(./assets/img/icons/arrow.svg);
+                background-size: 100% 100%;
+            } 
+            .ui-datepicker-next{
+                transform: translateY(-50%) rotate(-180deg);
+            } 
+            .ui-datepicker-prev {
+                right: 40px;
+            } 
+            .ui-datepicker-prev:after {
+            transform: rotate(45deg);
+            margin: -43px 0px 0px 8px;
+            }
+            .ui-datepicker-next {
+            float: right;
+            margin-right: 12px;
+            }
+            .ui-datepicker-next:after {
+            transform: rotate(-135deg);
+            margin: -43px 0px 0px 6px;
+            }
+            .ui-datepicker-prev:after,
+            .ui-datepicker-next:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-left: 2px solid #b0aead;
+            border-bottom: 2px solid #b0aead;
+            }
+            .ui-datepicker-prev:hover,
+            .ui-datepicker-next:hover,
+            .ui-datepicker-prev:hover:after,
+            .ui-datepicker-next:hover:after {
+            border-color: #5ed1cc;
+            }
+            .ui-datepicker-title {
+            text-align: left;
+            }
+            .ui-datepicker-calendar {
+            width: 100%;
+            text-align: center;
+            }
+            .ui-datepicker-calendar thead tr th span {
+                font-weight: 600;
+                font-size: 12px;
+                font-feature-settings: 'tnum' on, 'lnum' on;
+                color: #000000;
+            }
+            .ui-datepicker-calendar tr td {
+                border: 1px solid #EDF3F5;
+                background: #fff;
+                transition: .3s;
+            } 
+            .ui-state-default {
+            display: block;
+            text-decoration: none;
+            color: #b5b5b5;
+            line-height: 40px;
+            font-size: 12px;
+            }
+            .ui-state-default:hover,.ui-state-active {
+                background: #005395;
+                color: #fff; 
+            } 
+            .ui-datepicker-unselectable .ui-state-default {
+            color: #eee;
+            border: 2px solid transparent;
+            }
+
+        </style>
     </head>
     <body>
 
-       
-    <!-- header-area START -->
-    <div class="header-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-2 col-6">
-                    <div class="logo-area">
-                        <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+        <h1><a href="https://codepen.io/mrmrp/pen/qBjbQwR">https://codepen.io/mrmrp/pen/qBjbQwR</a></h1>
+        <h1><a href="https://codepen.io/blikkies/pen/XZwJEM">https://codepen.io/blikkies/pen/XZwJEM</a></h1>
+
+        <!-- dasboard-area STARTED -->
+        <div class="dasboard-area adm1">
+            <div class="dashLeft">
+                <div class="dashLeft-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <img src="assets/img/icons/menu/home.svg" alt="">
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="assets/img/icons/menu/beg.svg" alt="">
+                                <span>Organisaties</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="assets/img/icons/menu/cogs.svg" alt="">
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dashLeft-content"> 
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title">
+                                <h5>administrator</h5>
+                                <h2>Hello Joshua</h2>
+                            </div>
+                            <div class="adminCounts">
+                                <div class="adminCountsLeft"> 
+                                    <div class="adcBlk">
+                                        <span>organisaties</span>
+                                        <p>120</p>
+                                    </div>
+                                    <div class="adcBlk">
+                                        <span>locaties</span>
+                                        <p>62%</p>
+                                    </div>
+                                    <div class="adcBlk">
+                                        <span>gebruikers</span>
+                                        <p>378</p>
+                                    </div>
+                                </div>
+                                <div class="adminCountsRight">
+                                    <div class="adcBlk">
+                                        <span>week activiteiten</span>
+                                        <ul>
+                                            <li><span>+3</span> organisaties</li>
+                                            <li><span>+3</span> locaties</li>
+                                            <li><span>+3</span> gebruikers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-10 d-none d-lg-block text-right">
-                    <div class="menu-area">
-                        <nav>
-                            <ul id="nav">
-                                <li><a href="#">About Me</a></li>
-                                <li><a href="#">Services</a></li> 
-                                <li><a href="#">Portfolio</a></li> 
-                                <li><a href="#">Testimonials</a></li> 
-                                <li><a href="#">Contact Us</a></li>    
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-6 d-block d-lg-none text-center">
-                    <div class="bar">
-                        <a class="bar-icon siteBar-btn" href="#">
-                            <span></span>
-                        </a>
+            </div>
+            <div class="dashRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="dashRight-wrps"> 
+                            <h4 class="searchWithDate">
+                                <img src="assets/img/search.svg" alt=""> do, 21 Nov 2023
+                            </h4>
+                            <div id="datepicker" class="calendar"></div>
+                            <div class="sideNotifs">
+                                <div class="ntfBlk">
+                                    <h5>NOTIFICATIE TYPE</h5>
+                                    <p>Melding en redirect naar locatie van zoals rooster en les</p>
+                                </div>
+                                <div class="ntfBlk">
+                                    <h5>NOTIFICATIE TYPE</h5>
+                                    <p>Melding en redirect naar locatie van zoals rooster en les</p>
+                                </div>
+                                <div class="ntfBlk">
+                                    <h5>NOTIFICATIE TYPE</h5>
+                                    <p>Melding en redirect naar locatie van zoals rooster en les</p>
+                                </div>
+                                <div class="ntfBlk">
+                                    <h5>NOTIFICATIE TYPE</h5>
+                                    <p>Melding en redirect naar locatie van zoals rooster en les</p>
+                                </div>
+                            </div>
+                            <a href="#" class="clearAllNtf">Clear all</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        <!-- mobile-menu START -->
-        <div class="mobile-menu">
-            <a href="#" class="bars siteBar-btn"><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
-            </svg></a> 
-            <nav> 
-                <ul>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Services</a></li> 
-                    <li><a href="#">Portfolio</a></li> 
-                    <li><a href="#">Testimonials</a></li> 
-                    <li><a href="#">Contact Us</a></li>  
-                </ul>
-            </nav> 
-        </div> 
-    <!-- header-area END -->
+        <!-- dasboard-area ENDED -->
+
+  
+        
     
 		<!-- JS here --> 
         <script src="assets/js/jquery-3.4.1.min.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
@@ -84,5 +235,10 @@
         <script src="assets/js/jquery.magnific-popup.min.js"></script> 
         <script src="assets/js/plugins.js"></script>   
         <script src="assets/js/main.js"></script>
+        <script>
+            $(function() {
+  $( "#datepicker" ).datepicker({ firstDay: 1});
+});
+        </script>
     </body>
 </html>
