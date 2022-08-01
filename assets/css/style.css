@@ -181,6 +181,30 @@ border: 2px solid transparent;
 
 
 
+/* Searchbar css START */
+.search_bar {
+  position: relative;
+}
+
+.search_bar .mainSearchBox {
+  position: absolute;
+  right: 50px;
+  top: -10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  z-index: 9;
+}
+.mainSearchBox.show{
+  opacity: 1;
+  visibility: visible;
+  right: 60px;
+}
+.search_bar img {
+  cursor: pointer;
+}
+/* Searchbar css END */
+
 
 
 
@@ -445,9 +469,7 @@ a.clearAllNtf {
 
 
 
-
-
-
+ 
 
 
 
