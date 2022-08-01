@@ -39,13 +39,14 @@
                 height: 11px;
                 cursor: pointer;
                 position: absolute;
-                color: transparent;
+                color: transparent !important;
                 overflow: hidden;
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%) rotate(-360deg);
                 background-image: url(./assets/img/icons/arrow.svg);
                 background-size: 100% 100%;
+                /* display: none !important; */
             } 
             .ui-datepicker-next{
                 transform: translateY(-50%) rotate(-180deg);
@@ -64,23 +65,7 @@
             .ui-datepicker-next:after {
             transform: rotate(-135deg);
             margin: -43px 0px 0px 6px;
-            }
-            .ui-datepicker-prev:after,
-            .ui-datepicker-next:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 4px;
-            height: 4px;
-            border-left: 2px solid #b0aead;
-            border-bottom: 2px solid #b0aead;
-            }
-            .ui-datepicker-prev:hover,
-            .ui-datepicker-next:hover,
-            .ui-datepicker-prev:hover:after,
-            .ui-datepicker-next:hover:after {
-            border-color: #5ed1cc;
-            }
+            } 
             .ui-datepicker-title {
             text-align: left;
             }
@@ -119,8 +104,8 @@
     </head>
     <body>
 
-        <h1><a href="https://codepen.io/mrmrp/pen/qBjbQwR">https://codepen.io/mrmrp/pen/qBjbQwR</a></h1>
-        <h1><a href="https://codepen.io/blikkies/pen/XZwJEM">https://codepen.io/blikkies/pen/XZwJEM</a></h1>
+        <!-- <h1><a href="https://codepen.io/mrmrp/pen/qBjbQwR">https://codepen.io/mrmrp/pen/qBjbQwR</a></h1>
+        <h1><a href="https://codepen.io/blikkies/pen/XZwJEM">https://codepen.io/blikkies/pen/XZwJEM</a></h1> -->
 
         <!-- dasboard-area STARTED -->
         <div class="dasboard-area adm1">
@@ -234,11 +219,6 @@
         <script src="assets/js/slick.min.js"></script>
         <script src="assets/js/jquery.magnific-popup.min.js"></script> 
         <script src="assets/js/plugins.js"></script>   
-        <script src="assets/js/main.js"></script>
-        <script>
-            $(function() {
-  $( "#datepicker" ).datepicker({ firstDay: 1});
-});
-        </script>
+        <script src="assets/js/main.js"></script> 
     </body>
 </html>

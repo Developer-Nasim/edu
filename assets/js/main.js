@@ -1,6 +1,10 @@
 (function($) {
   "use strict";
-  
+
+  if(document.querySelector('#datepicker')){ 
+    $( "#datepicker" ).datepicker({ firstDay: 1});
+  }
+
  // menu 
   $('.siteBar-btn').click( function (){ 
     $('.mobile-menu').toggleClass('siteBar');   
