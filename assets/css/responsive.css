@@ -7,6 +7,25 @@
 
 /* Normal screen :992px. */
 @media (min-width: 992px) and (max-width: 1200px) {
+    .dashRight { 
+        padding: 30px 20px;
+    }
+    .adminCounts { 
+        flex-wrap: wrap;
+    }
+    .adminCounts .adminCountsRight {
+        margin-left: 0px; 
+        margin-top: 20px; 
+    }
+    .adminCounts .adminCountsLeft { 
+        width: 100%;
+        justify-content: center;
+    }
+
+
+
+
+
 
 
 }
@@ -14,6 +33,32 @@
  
 /* Tablet screen :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+    .dashRight { 
+        padding: 30px 20px;
+        padding-left: 70px;
+    }
+    .adminCounts { 
+        flex-wrap: wrap;
+    }
+    .adminCounts .adminCountsRight {
+        margin-left: 0px; 
+        margin-top: 20px; 
+    }
+    .adminCounts .adminCountsLeft { 
+        width: 100%;
+        justify-content: center;
+    } 
+    .dasboard-area.adm1 { 
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    .dashRight-main-wrps {
+        display: flex;
+    }
+    
+    .dashRight-main-wrps .clndr {
+        width: 330px;
+    }
 
 
 }
@@ -21,8 +66,47 @@
  
 /* small screen :320px. */
 @media (max-width: 767px) {
+    .dashRight { 
+        padding: 30px 20px;
+        padding-left: 70px;
+    }
+    .adminCounts { 
+        flex-wrap: wrap;
+    }
+    .adminCounts .adminCountsRight {
+        margin-left: 0px; 
+        margin-top: 20px; 
+    }
+    .adminCounts .adminCountsLeft { 
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    } 
+    .dasboard-area.adm1 { 
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    } 
+    .dashLeft { 
+        padding: 40px 20px 40px 60px;
+    }
+    .sideNotifs {
+        max-height: 210px; 
+    }
+    .dashLeft-content .title h5 { 
+        font-size: 14px; 
+        margin-bottom: 10px;
+    }
+    .dashLeft-content .title h2 {
+        font-size: 28px;
+        line-height: 38px; 
+    }
 
- 
+
+
+
+
+
+
 }
  
 /* Large Mobile screen :480px. */
