@@ -1,6 +1,8 @@
 /* Big screen :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
-
+    .adminCounts.stskn .adminCountsLeft .adcBlk {
+        padding: 18px;
+    }
 
 }
 
@@ -21,7 +23,9 @@
         width: 100%;
         justify-content: center;
     }
-
+    .adminCounts.stskn {
+        margin-top: 50px;
+    }
 
 
 
@@ -59,7 +63,9 @@
     .dashRight-main-wrps .clndr {
         width: 330px;
     }
-
+    .adminCounts.stskn {
+        margin-top: 50px;
+    }
 
 }
 
@@ -82,6 +88,9 @@
         justify-content: center;
         flex-wrap: wrap;
     } 
+    .dashLeft-content .title {
+        margin-bottom: 30px;
+    }
     .dasboard-area.adm1 { 
         flex-wrap: wrap;
         flex-direction: column-reverse;
@@ -100,10 +109,30 @@
         font-size: 28px;
         line-height: 38px; 
     }
-
-
-
-
+    .adminCounts.stskn {
+        margin-top: 50px;
+    }
+    .wkNms { 
+        padding: 15px;
+    }
+    .m-sdl-blk{
+        display: block;
+    }
+    .m-sdl-blk a {
+        margin-bottom: 18px;
+        display: block;
+    }
+    
+    .m-sdl-blk a span {
+        margin-bottom: 0px;
+    }
+    
+    .m-sdl-blk a:last-child {
+        margin: 0;
+    }
+    .adminCounts.stskn .adminCountsLeft .adcBlk {
+        padding: 20px;
+    }
 
 
 

@@ -88,6 +88,74 @@ li {
    padding-right: 0;
  }
  
+.themebtn {
+  background: #DA4167;
+  box-shadow: 2px 4px 10px rgba(218, 65, 103, 0.2);
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px; 
+  color: #F9F9FB;
+  outline: none;
+  border: none;
+  transition: .3s;
+}
+
+.themebtn:hover {
+  box-shadow: 2px 4px 10px rgb(218 65 103 / 50%);
+  color: #fff;
+}
+button.themebtn2 {
+  background: #EDF3F5;
+  color: #005395;
+  box-shadow: 2px 4px 10px rgb(65 118 218 / 20%);
+}
+
+button.themebtn2:hover {
+  color: #005395;
+  box-shadow: 2px 4px 10px rgb(97 150 224 / 20%);
+}
+
+
+/* Switch */
+.the_Switch input[type=checkbox]{
+  width:60px;
+  height: 28px;
+  background-color: #F0F0F2;
+  -webkit-appearance:none;
+  border-radius: 20px;
+  outline: none;
+  position: relative;  
+}
+.the_Switch input[type=checkbox]:before {
+  content: '';
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  line-height: 65px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: url(../img/close.png); 
+  background-size: 100% 100%;
+  left: 37px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition-duration: .5s;
+}
+.the_Switch input:checked[type=checkbox]:before{
+  background-image: url(../img/tick.png);
+  content: ''; 
+  left: 5px;
+  transition-duration: .5s; 
+}  
+
+
+
+ 
 /* default-css END 
 ================================== */
  
@@ -227,12 +295,13 @@ border: 2px solid transparent;
 
 .dasboard-area.adm1 .dashLeft {
   width: 100%;
+  padding: 50px 30px 50px 100px;
 }
 
 .dashLeft {
   width: 100%;
   position: relative;
-  padding: 50px 30px 50px 100px;
+  padding: 30px 30px 50px 100px;
 }
 
 .dashLeft-menu {
@@ -240,6 +309,7 @@ border: 2px solid transparent;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  z-index: 99;
 }
 
 .dashLeft-menu li {
@@ -330,6 +400,7 @@ border: 2px solid transparent;
   align-items: center;
   background: #F9F9FB;
   border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .adminCounts .adminCountsLeft .adcBlk {
@@ -371,10 +442,41 @@ border: 2px solid transparent;
   letter-spacing: 0.3px;
   color: #000000;
   margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.adminCounts .adminCountsRight .adcBlk ul li div {
+  display: flex;
+  align-items: center;
+  color: #005395;
 }
 
-.adminCounts .adminCountsRight .adcBlk ul li span {
-  margin-right: 15px;
+.adminCounts .adminCountsRight .adcBlk ul li div span {
+  font-size: 16px;
+  
+/* identical to box height, or 150% */
+  letter-spacing: 0.3px;
+
+/* White Gray */
+  color: #F9F9FB;
+  width: 43px;
+  height: 28px;
+
+/* Dark blue */
+  background: #005395;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 28px;
+  margin-left: 10px;
+}
+
+.adminCounts .adminCountsRight .adcBlk ul li.orange div {
+  color: #FF6422;
+}
+
+.adminCounts .adminCountsRight .adcBlk ul li.orange div span {
+  background: #FF6422;
 }
 
 
@@ -458,8 +560,924 @@ a.clearAllNtf {
 
 
 
-/* administrator 1st page css END && DD PAGE css STARTED */
+/* administrator 1st page css END && Manager PAGE css STARTED */
 
+
+
+
+
+
+.deze-week p, .adminCounts.stskn p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  margin-bottom: 16px;
+  color: #003A68;
+}
+.adminCounts.stskn {
+  display: block;
+}
+
+.adminCounts.stskn .adminCountsRight {
+  margin: 0;
+  margin-top: 20px;
+}
+.adminCounts.stskn .adminCountsLeft{
+  justify-content: space-between;
+}
+.adminCounts.stskn .adminCountsLeft .adcBlk {
+  padding: 25px;
+}
+.wkNms {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #F9F9FB;
+  border-radius: 8px;
+  padding: 25px 30px;
+}
+.deze-week nav button {
+  width: 44px;
+  height: 39px;
+  border-radius: 2px;
+  position: relative;
+  text-align: center;
+  line-height: 38px;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding-right: 0 !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+}
+
+.deze-week nav button.active {
+  background: #005394 !important;
+  color: #fff !important;
+}
+
+div#nav-tab button b {
+  width: 16px;
+  height: 16px;
+  background: #FF2222;
+  font-weight: 700;
+  font-size: 8px;
+  display: block;
+  color: #F9F9FB;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  line-height: 16px;
+  transform: translate(8px, -8px);
+}
+
+.deze-week nav button:after {
+  display: none;
+}
+
+.deze-week div#nav-tab {
+  background: #F9F9FB;
+  border-radius: 8px;
+  padding: 25px 30px;
+}
+.wkNms span {
+  width: 44px;
+  height: 39px; 
+  border-radius: 2px;
+  position: relative;
+  text-align: center;
+  line-height: 38px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.wkNms span.active {
+  background: #005395;
+  color: #fff;
+}
+.m-sdl {
+  padding: 0 10px;
+}
+.wkNms span.active b {
+  width: 16px;
+  height: 16px; 
+  background: #FF2222;
+  font-weight: 700;
+  font-size: 8px; 
+  display: block;
+  color: #F9F9FB;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  line-height: 16px;
+  transform: translate(8px, -8px);
+}
+
+.m-sdl-blk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F9F9FB;
+  box-shadow: 2px 2px 5px rgba(163, 163, 169, 0.1);
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 24px 32px;
+}
+
+.m-sdl-blk a {
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px;
+  color: #000000;
+}
+
+.m-sdl-blk a span {
+  display: block;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase; 
+  color: #005395;
+  margin-bottom: 10px;
+}
+
+.m-sdl-blk a.active {
+  color: #FF2222;
+  font-weight: 600;
+}
+
+.m-sdl-blk a.active span {
+  color: #FF2222;
+}
+
+
+
+
+
+
+/* Manager page css END && locaties PAGE css STARTED */
+
+
+/* Search Filter START */
+#searchform {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+#searchform > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+  color: #003A68;
+}
+#searchform #search-bar {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+}
+#searchform .output {
+  list-style: none;
+  width: 100%;
+  min-height: 0px;
+  border-top: 0 !important;
+  color: #767676;
+  font-size: 0.75em;
+  transition: min-height 0.2s;
+  position: absolute;
+  z-index: 5;
+}
+#searchform .output, #searchform #search-bar {
+  border: none;
+  background: #F9F9FB;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+}
+#searchform .prediction-item {
+  padding: 0.5em 0.75em;
+  transition: color 0.2s, background 0.2s;
+}
+
+#searchform .output:hover .focus {
+  background: #fff;
+  color: #767676;
+}
+#searchform .prediction-item:hover, #searchform .focus, #searchform .output:hover .focus:hover {
+  background: #EDF3F5;
+  color: #003A68;
+}
+#searchform .prediction-item:hover {
+  cursor: pointer;
+}
+
+#searchform .prediction-item strong {
+  color: #333;
+}
+#searchform .prediction-item:hover strong {
+  color: #000;
+}
+#searchform button#submit {
+  top: 50%;
+  right: 15px;
+  position: absolute;
+  background: no-repeat;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  transform: translateY(-50%);
+}
+
+#searchform button#submit svg path {
+  stroke: #A3A3A9;
+  transition: .3s;
+}
+
+#searchform button#submit:hover svg path {
+  stroke: #2e2e2e;
+}
+
+/* Search Filter END */
+
+
+
+
+
+.headerWithActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.headerWithActions img.hxBtn {
+  padding: 12px;
+  gap: 10px;
+  width: 40px;
+  height: 40px; 
+  background: #EDF3F5;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.notifHere {
+  position: relative;
+}
+
+.notifHere .dashRight-wrps {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #EDF3F5;
+  z-index: 999;
+  width: 320px;
+  padding: 30px 15px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+.notifHere .dashRight-wrps.show{
+  opacity: 1;
+  visibility: visible;
+  top: 50px;
+}
+.notifHere .sideNotifs {
+  max-height: 210px;
+}
+.notifHere .dashRight-wrps:after {
+  content: "";
+  position: absolute;
+  border-top: 10px solid #edf3f5;
+  border-right: 10px solid #b9b9b900;
+  top: -5px;
+  right: 15px;
+  transform: rotate(45deg);
+}
+.headerWithActions .mainSearchBox {
+  top: 0px;
+}
+.headerWithActions b {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase; 
+  color: #003A68;
+  margin-left: 15px;
+}
+.title.flxTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tbl {
+  width: 100%;
+}
+
+.tbl table {
+  width: 100%;
+}
+
+.tbl table thead tr th {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #003A68;
+  padding: 10px 10px 10px 20px;
+}
+
+.tbl table thead tr th:first-child {
+  font-weight: 700;
+}
+.tbl table tbody tr td a{
+  padding: 8px 10px 8px 20px;
+  width: 100%;
+  display: block;
+}
+.tbl table tbody tr td:last-child a{
+  padding: 0;
+  width: max-content;
+}
+.tbl table tbody tr td {
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px; 
+  color: #003A68;
+  background: #EDF3F5;
+  transition: .3s;
+}
+.tbl table tbody tr:hover td {
+  background: #CCDDE2;
+  /* font-weight: 700; */
+}
+.tbl table tbody tr {border-bottom: 8px solid #fff;}
+
+.tbl table tbody tr td:last-child {
+  border-radius: 0 5px 10px 0;
+}
+
+.tbl table tbody tr td:first-child {
+  border-radius: 5px 0 0 10px;
+}
+.tblActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tblActions a {
+  margin-left: 25px;
+}
+
+.tbl table tbody tr:hover .tblActions {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+div#FrmMdl .modal-dialog {
+  max-width: 1015px;
+}
+
+#FrmMdl .modal-content {
+  border: none;
+}
+
+.modal-content {
+  border: none;
+}
+
+.modal-content button.btn-close {
+  color: red;
+} 
+
+form.withFrm {
+  padding: 40px;
+}
+
+form.withFrm h2 {
+  font-size: 36px;
+  line-height: 45px; 
+  letter-spacing: 1px; 
+  color: #003A68;
+}
+
+form.withFrm p {
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px; 
+  color: #4E4C59;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.frmActBtns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.frmActBtns a {
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline; 
+  color: #005395;
+  margin-right: 40px;
+}
+.successPopup {
+  text-align: center;
+}
+
+.successPopup .scppErp h2 {
+  letter-spacing: 1px; 
+  color: #003A68;
+}
+
+.successPopup .scppErp p {
+  letter-spacing: 0.3px; 
+  color: #4E4C59;
+}
+
+.successPopup .scppErp .themebtn {
+  display: block;
+  width: max-content;
+  margin: auto;
+}
+
+.modal-body {
+  padding: 40px;
+  padding-top: 0;
+}
+button.close-this-popup,
+.mdl_actions button,
+.mdl_actions a {
+  display: flex;
+  width: max-content;
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px; 
+  text-align: right;
+  letter-spacing: 0.2px; 
+  color: #005395;
+  transition: .3s;
+  margin-top: 15px;
+  margin-right: 40px;
+}
+
+button.close-this-popup:hover,
+.mdl_actions button:hover,
+.mdl_actions a:hover {
+  opacity: .6;
+}
+.mdl_actions button:first-child,.mdl_actions a:first-child {
+    margin-left: 30px;
+    display: flex;
+    align-content: center;
+}
+button.close-this-popup img {
+  margin-left: 3px;
+  margin-top: 1px;
+}
+
+.mdl_actions button:first-child i,
+.mdl_actions a:first-child i {
+  margin-right: 5px;
+}
+.mdl_actions button {margin-left: unset;}
+
+.showSuccess form.withFrm {
+  display: none;
+}
+
+.showSuccess .modal-dialog {
+  max-width: 500px !important;
+}
+.showSuccess .successPopup {
+  display: block !important;
+}
+.frmActBtns.withDots {
+  justify-content: space-between;
+} 
+h2.withSubTitle a {
+    font-size: 14px;
+    line-height: 20px; 
+    letter-spacing: 0.2px; 
+    color: #003A68;
+    font-weight: 400;
+    margin-left: 15px;
+}
+ul.stepDots {
+  display: flex;
+  align-items: center;
+}
+
+ul.stepDots li {
+  width: 12px;
+  height: 12px; 
+  background: #D4E0EC;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+ul.stepDots li.active {
+  background: #005395;
+}
+.frmActBtns.withDots > div {
+  display: flex;
+  align-items: center;
+}
+button.prevNext {
+  letter-spacing: 0.2px; 
+  color: #005395;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  margin-left: 20px;
+  transition: .3s;
+}
+
+button.prevNext:hover {
+  text-decoration: underline;
+}
+.formSteps .step {
+  display: none;
+}
+
+.formSteps   .step.active {
+  display: block;
+}
+.formSteps.firstStep button.prevNext {
+  display: none;
+}
+
+.formSteps.LastStep button.themebtn.nextStep {
+  display: none;
+}
+.formSteps.LastStep button.themebtn.showSuccess {
+  display: block;
+}
+.formSteps button.themebtn.showSuccess{
+  display: none;
+}
+/* locaties  page css END && Locatie-a PAGE css STARTED */
+
+
+
+
+.adminCounts.locatieA .adminCountsLeft {
+  width: 100%;
+  justify-content: space-between;
+  background: no-repeat;
+}
+
+.adminCounts.locatieA .adminCountsLeft .adcBlk {
+  padding: 0;
+}
+form.lktAFrm p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #005395;
+}
+
+form.lktAFrm p .eddt {
+  width: 40px;
+  height: 40px; 
+  background: #EDF3F5;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.lktAFrm p button path {
+  stroke: #005395;
+}
+
+.lktA-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.lktA-topbar button,.lktA-topbar a {
+  padding: 0;
+  border: none;
+  background: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #005395;
+}
+
+form.lktAFrm label {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px;margin-bottom: 15px;
+  color: #111111;
+  text-transform: capitalize;
+}
+
+input,select,textarea {
+  background: #EDF3F5;
+  border-radius: 4px;
+  padding: 10px 16px;
+  outline: none;
+  border: none;
+  color: #4E4C59;
+}
+
+label input,
+label select,
+label textarea {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+form.lktAFrm {
+  margin-top: 30px;
+}
+.lktFrmDts {
+  padding-right: 40px;
+}
+
+.tbl a.loadMore {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline; 
+  color: #005395;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+a.svRBk {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline;
+  color: #FF2222;
+  display: block;
+  margin-top: 20px;
+}
+.headerWithActions.withGoBACK {
+  width: 100%;
+  justify-content: space-between;
+}
+
+a.goback {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase; 
+  color: #DA4167;
+  position: relative;
+}
+
+.headerWithActions.withGoBACK > div {
+  display: flex;
+  align-items: center;
+}
+
+a.goback:before {
+  content: "<";
+  font-family: monospace;
+  font-size: 21px;
+  margin-right: 10px;
+}
+form.lktAFrm.notEditing input {
+  opacity: .5;
+  pointer-events: none;
+}
+
+form.lktAFrm.notEditing a.svRBk {
+  display: none;
+}
+
+body.editmode .lktRt{
+  opacity: .4;
+  pointer-events: none;
+}
+body.editmode form.lktAFrm button.goToEdit.eddt {
+  display: none;
+}
+
+body.editmode form.lktAFrm button.goToEdit.themebtn {
+  display: block !important;
+}
+label.capacityLabel img {
+  margin-top: 5px;
+  max-width: 150px;
+}
+
+label tags.tagify.tagify--noTags.tagify--empty {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  margin-top: 5px;
+}
+
+
+
+/* Locatie-a page css END && School-a PAGE css STARTED */
+
+
+
+
+div#nav-tab button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  font-weight: 700;
+  color: #005395;
+  margin-right: 10px;
+  transition: .3s;
+  position: relative;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+  padding-right: 15px;
+  opacity: .5;
+}
+div#nav-tab button.active {
+  opacity: 1;
+}
+div#nav-tab button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  left: 50%;
+  height: 1px;
+  background: #DA4167;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: .3s;
+}
+
+div#nav-tab button.active:after {
+  width: 100%;
+  opacity: 1;
+}
+.not_found_data {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.not_found_data span {
+  line-height: 24px; 
+  text-align: center;
+  letter-spacing: 0.3px; 
+  color: #4E4C59;
+}
+
+.not_found_data img {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+/* School-a page css END && Settings PAGE css STARTED */
+
+
+
+form.lktAFrm a.an_a {
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline; 
+  color: #005395;
+  display: block;
+  margin-top: 20px;
+}
+.frmActBtns.withBtns > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.frmActBtns.withBtns a {
+  display: block;
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.frmActBtns.withBtns {
+  display: block;
+}
+.textOnlyPopup p {
+  margin-bottom: 30px; 
+}
+
+.textOnlyPopup button {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+ 
+
+form.withFrm.multiFuncStepHere.connected_steps_2 .steps2,
+form.withFrm.multiFuncStepHere.connected_steps_3 .steps3,
+form.withFrm.multiFuncStepHere .steps2 .step2.active,
+form.withFrm.multiFuncStepHere .steps3 .step3.active {
+  display: block;
+}
+
+form.withFrm.multiFuncStepHere .steps2,
+form.withFrm.multiFuncStepHere .steps3,
+form.withFrm.multiFuncStepHere.connected_steps_2 .dfltStep,
+form.withFrm.multiFuncStepHere.connected_steps_3 .dfltStep,
+form.withFrm.multiFuncStepHere .steps2 .step2,
+form.withFrm.multiFuncStepHere .steps3 .step3 {
+  display: none; 
+} 
+
+
+
+/* Settings page css END && Manager PAGE css STARTED */
+
+
+
+
+
+
+
+
+
+
+/* administrator page css END && Manager PAGE css STARTED */
+
+
+
+
+
+
+
+
+
+
+/* administrator page css END && Manager PAGE css STARTED */
+
+
+
+
+
+
+
+
+
+
+/* administrator  page css END && Manager PAGE css STARTED */
 
 
 

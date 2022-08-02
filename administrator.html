@@ -33,8 +33,38 @@
                         </li>
                         <li>
                             <a href="#">
+                                <img src="assets/img/icons/menu/calender.svg" alt="">
+                                <span>Rooster</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <img src="assets/img/icons/menu/beg.svg" alt="">
                                 <span>Organisaties</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="assets/img/icons/menu/location.svg" alt="">
+                                <span>Locaties</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="assets/img/icons/menu/mans.svg" alt="">
+                                <span>Gebruikers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="assets/img/icons/menu/note.svg" alt="">
+                                <span>Groepen</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="assets/img/icons/menu/clock.svg" alt="">
+                                <span>Lessen</span>
                             </a>
                         </li>
                         <li>
@@ -71,9 +101,10 @@
                                     <div class="adcBlk">
                                         <span>week activiteiten</span>
                                         <ul>
-                                            <li><span>+3</span> organisaties</li>
-                                            <li><span>+3</span> locaties</li>
-                                            <li><span>+3</span> gebruikers</li>
+                                            <li>leerlingen <div><b>+</b><span>3</span></div></li>
+                                            <li class="orange">medewerkers <div><b>-</b><span>3</span></div></li>
+                                            <li>taken <div><b>+</b><span>3</span></div></li> 
+                                            <li>lessen <div><b>+</b><span>3</span></div></li> 
                                         </ul>
                                     </div>
                                 </div>
@@ -136,42 +167,8 @@
         <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script> 
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>  
+        <script src="assets/js/owl.carousel.min.js"></script>  
         <script src="assets/js/tagify.min.js"></script>  
-        <script src="assets/js/main.js"></script> 
-        <script>
-            AutoSuggestionSearch()
-            function AutoSuggestionSearch() {
-                
-                var input1 = document.querySelector("input[name=tags]"),
-                tagify1 = new Tagify(input1, {
-                    whitelist: [    
-                        "Joeke Hog",
-                        "Joep Lima",
-                        "Joep Siquior",
-                        "ACL2", 
-                        "ACT-III",
-                        "Action!", 
-                        "Ada", 
-                    ],
-                    blacklist: ["fuck", "shit"]
-                });
-
-                let searchBtn = document.querySelectorAll('.searchIconItIs')
-
-                if (searchBtn.length > 0) {
-                    searchBtn.forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            let searchBlk = e.target.parentElement.querySelector('.mainSearchBox');
-                            searchBlk.classList.toggle('show')
-                            
-                        })
-                    });
-                }
-
-            }
-
-        </script>
+        <script src="assets/js/main.js"></script>  
     </body>
 </html>
