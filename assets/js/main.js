@@ -86,6 +86,31 @@
                 $('.IntoTime').attr('type', 'text')
             } 
         }
+
+
+
+        if ($('.IntoSelect').length > 0) {
+            let SInps = document.querySelectorAll('.IntoSelect')
+            if ($('.IntoSelect').attr('type') == "text") {
+                
+                SInps.forEach(inp => {
+                    inp.parentElement.classList.add('showSelection') 
+                })
+                $('.IntoSelect').attr('type',"selection")
+            }else{ 
+                SInps.forEach(inp => {
+                    inp.parentElement.classList.remove('showSelection') 
+                })
+                $('.IntoSelect').attr('type',"text")
+            } 
+            let Selects = document.querySelectorAll('.withIntoSelect')
+            Selects.forEach(select => {
+                select.addEventListener("change", (e) => {
+                    e.target.parentElement.querySelector('input').value = e.target.value;
+                })
+            })
+
+        }
     })
   }
 

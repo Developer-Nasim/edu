@@ -35,8 +35,19 @@ button {
 
 button:focus, input:focus, input:focus, textarea, textarea:focus {
   outline: 0; }
-
- 
+  a.externaLink {
+    display: block;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-decoration-line: underline; 
+    color: #005395;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+hr {
+  border: 1px solid #D4E0EC;
+}
 h1,
 h2,
 h3,
@@ -98,9 +109,10 @@ li {
   line-height: 19px;
   text-align: center;
   letter-spacing: 0.2px; 
-  color: #F9F9FB;
+  color: #F9F9FB !important;
   outline: none;
   border: none;
+  text-decoration: none !important;
   transition: .3s;
 }
 
@@ -245,6 +257,125 @@ color: #eee;
 border: 2px solid transparent;
 }
 /* Calender END */
+
+
+
+/* MultiSelection START */
+.multiselect {
+  font-size: 16px;
+  background: #EDF3F5;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 15px;
+  padding: 15px;
+  padding-bottom: 11px;
+  width: 100%;
+  position: relative;
+  margin-top: 5px;
+  outline: none;
+}
+.mslabel {
+display: inline-block;
+width: 90%;
+padding-left: 5px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap; 
+outline: none;
+}
+.mstogglebtn {
+display: inline-block;
+float: right;
+width: 16px;
+text-align: center;
+outline: none;
+}
+.mslist {
+  position: absolute;
+  height: 0px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #EDF3F5;
+  top: 42px;
+  left: 0;
+  box-shadow: 2px 7px 10px #0000001c;
+}
+.multiselect > .mstogglebtn:focus ~ *:last-child,
+.multiselect > .mslist:last-child:hover,
+.multiselect > *:last-child:focus,
+.multiselect:focus-within .mslist {
+height: auto;
+pointer-events: auto;
+} 
+.msitem:hover {
+background: #edf3f5aa;
+}
+
+.msitem label { 
+border-bottom: 1px solid #eee; 
+cursor: pointer; 
+}
+.msitem:first-child label {
+border-top: 1px solid #eee;
+}
+.msitem:last-child label {
+border-bottom: 0px;
+}
+.multiselect > *:not(:last-child):focus,
+.mstogglebtn:focus,
+.mslabel:focus,
+.multiselect:focus {
+pointer-events: none; /* Causes second click to close */
+}
+.msitem input {
+  margin: 0;
+  width: max-content;
+}
+
+.msitem label {
+  margin: 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px; 
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.3px;
+  color: #4A4A4A;
+  padding: 10px;
+  padding-left: 40px;
+} 
+.msitem label:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 1px solid #BFBFBF;
+  border-radius: 2px;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.msitem label:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  border-top: 1px solid #367993;
+  border-right: 1px solid #367993;
+  top: 47%;
+  left: 19px;
+  transform: translateY(-50%) rotate(140deg);
+  z-index: 2;
+  transition: .3s;
+  opacity: 0;
+}
+.msitem input[type="checkbox"]:checked+label:before{
+  opacity: 1; 
+}
+/* MultiSelection END */
 
 
 
@@ -1444,33 +1575,152 @@ form.withFrm.multiFuncStepHere .steps3 .step3 {
 
 
 
-/* Settings page css END && Manager PAGE css STARTED */
+/* Settings page css END && User PAGE css STARTED */
+
+
+
+.timeSlots label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timeSlots label > div {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.timeSlots label > div > input {
+  max-width: 48%;
+}
+ul.timingHere {
+  position: relative;
+  width: 100%;
+}
+
+ul.timingHere > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #111111;
+}
+
+ul.timingHere > span span {
+  color: #005395;
+}
+
+ul.timingHere li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+ul.timingHere li > span {
+  letter-spacing: 0.3px;
+
+/* Black */
+  color: #111111;
+  width: 30px;
+}
+
+ul.timingHere li label {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  margin-left: 20px;
+  background: rgba(249, 249, 251, 0.5);
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+ul.timingHere li label input {
+  text-align: center;
+  background: none;
+}
+
+ul.timingHere li label div {
+  display: block;
+  width: 77%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #EDF3F5;
+  border-radius: 4px;
+  z-index: -1;
+}
 
 
 
 
 
 
+/* User page css END && Groups PAGE css STARTED */
+
+
+
+.input_select select,
+.input_select.showSelection input{
+  display: none;
+}
+
+.input_select.showSelection select{
+  display: block;
+}
 
 
 
 
-/* administrator page css END && Manager PAGE css STARTED */
+
+
+/* Groups page css END && Lessons PAGE css STARTED */
 
 
 
+.tgList button.themebtn {
+  display: block;
+  margin-left: auto;
+  box-shadow: none;
+  padding: 10px 15px;
+}
 
+.tgList button.themebtn svg path {
+  stroke: #005395;
+}
 
+.tgList p {
+  display: flex;
+  align-items: center;
+}
 
+.tgList p img {
+  margin-right: 5px;
+}
 
+.tgList ul {
+  background: #F9F9FB;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
 
-
-
-/* administrator page css END && Manager PAGE css STARTED */
-
-
-
-
+.tgList ul li {
+  padding: 2px 8px;
+  gap: 10px;
+  height: 28px; 
+  background: #EDF3F5;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
 
 
 
