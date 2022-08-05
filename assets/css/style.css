@@ -2145,7 +2145,16 @@ form.lktAFrm .lncFtcr p > b,
 .dashLeft-content .title h2 span.successStatus {
   margin-left: 30px;
 }
-
+.lcntDtl .the_Switch input[type=checkbox]:after {
+  content: "Inactief";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 65px;
+}
+.lcntDtl .the_Switch input[type=checkbox]:checked::after {
+  content: "Actief"; 
+}
 
 
 
