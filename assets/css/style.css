@@ -122,7 +122,7 @@ li {
 }
 button.themebtn2 {
   background: #EDF3F5;
-  color: #005395;
+  color: #005395 !important;
   box-shadow: 2px 4px 10px rgb(65 118 218 / 20%);
 }
 
@@ -164,7 +164,9 @@ button.themebtn2:hover {
   left: 5px;
   transition-duration: .5s; 
 }  
-
+.mr-15 {
+  margin-right: 15px;
+}
 
 
  
@@ -1314,7 +1316,7 @@ form.lktAFrm p .eddt {
   justify-content: center;
 }
 
-form.lktAFrm p button path {
+form.lktAFrm p button path,.themebtn2 svg path {
   stroke: #005395;
 }
 
@@ -1727,25 +1729,331 @@ ul.timingHere li label div {
 
 
 
-/* administrator  page css END && Manager PAGE css STARTED */
+/* Lessons  page css END && Settings Manager PAGE css STARTED */
 
 
 
+p.kindOfTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #005395;
+}
+.alltagWrp_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 
+.alltagWrp_top p.kindOfTitle {
+  margin: 0;
+}
 
+.alltagWrp_top button.themebtn.themebtn2 {
+  box-shadow: none;
+  padding: 11px 15px;
+}
 
+ul.smTags {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+}
+.singleTagWrp ul.smTags {
+  height: 65px;
+  overflow: hidden;
+}
+.singleTagWrp.showMore ul.smTags{
+  height: auto;
+}
+ul.smTags li {
+  line-height: 24px; 
+  letter-spacing: 0.3px; 
+  color: #111111;
+  background: #F9F9FB;
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  position: relative;
+}
 
+button.Less_more {
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px;
+  text-decoration-line: underline; 
+  color: #005395;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+}
 
+.singleTagWrp {
+  margin-bottom: 30px;
+}
 
+button.Less_more span:last-child {
+  display: none;
+}
+
+.mngBlk {
+  padding: 24px 40px; 
+  background: #F9F9FB;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.mngBlk.showMore .mngBlk-bottom {
+  display: flex;
+}
+.mngBlk-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mngBlk-top-left {
+  display: flex;
+  align-items: center;
+}
+
+.mngBlk h5 {
+  margin: 0;
+  margin-left: 25px;
+  font-size: 16px;
+  line-height: 32px;
+/* identical to box height, or 200% */
+  color: #000000;
+}
+
+.mngBlk h5 span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+/* identical to box height, or 143% */
+  letter-spacing: 0.2px;
+  color: #000000;
+  display: block;
+}
  
 
+.mngBlk-bottom {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  display: none;
+}
 
+.mngBlk-bottom > a {
+  font-size: 14px;
+  line-height: 17px; 
+  text-align: center;
+  letter-spacing: 0.3px;
+  text-decoration-line: underline; 
+  color: #005395;
+}
+.mngBlk-top-right img.showMoreLessNow {
+  margin-left: 15px;
+  -webkit-user-drag: none;
+  cursor: pointer;
+  transition: .3s;
+}
+.mngBlk.showMore img.showMoreLessNow {
+  transform: rotate(180deg);
+}
+.alltagWrp_top p.kindOfTitle span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px; 
+  color: #8595B6;
+}
+div#tgEdit {}
 
+div#tgEdit .modal-dialog {
+    max-width: 700px;
+}
 
+label.tgsSrc {
+    position: relative;
+}
 
+label.tgsSrc img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    filter: grayscale(1);
+    -webkit-user-drag: none;
+}
 
+.tgdWithEdit ul.smTags li {
+    cursor: pointer;
+}
+.tgEditBlk {
+  padding: 10px;
+  width: 264px;
+  height: 133px;
+  background: #FFFFFF;
+  border: 1px solid #F0F0F2;
+  box-shadow: 0px 0px 10px rgb(78 76 89 / 10%);
+  border-radius: 4px;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden; 
+} 
+.tgdWithEdit ul.smTags li:hover .tgEditBlk {
+  opacity: 1;
+  visibility: visible;
 
+}
+.tgEditBlk input {
+    width: 100%;
+    margin-bottom: 10px;
+}
 
+.tgEditBlk button.themebtn.themebtn2.dlt {
+    box-shadow: none;
+    margin-right: 20px;
+}
+
+.tgEditBlk span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px; 
+    text-align: center;
+    letter-spacing: 0.3px; 
+    color: #FF2222;
+    border-bottom: 1px solid #FF2222;
+    position: relative;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.tgEditBlk span svg path {
+    stroke: red;
+}
+
+.tgEditBlk span svg {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.NieuweToevoegen {
+  display: flex;
+  align-items: center;
+}
+
+.NieuweToevoegen button.themebtn {
+  margin-left: 10px;
+  padding: 12px 28px;
+  margin-bottom: -5px;
+}
+span.successStatus,span.dangerStatus {
+  background: #DDF2DD; 
+  border: 1px solid #50C24E;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px; 
+  color: #50C24E;
+  padding: 8px 16px;
+}
+span.dangerStatus{
+  color: #FF2222;
+  background: #FFDEDE; 
+  border: 1px solid #FF2222;
+
+}
+label.withCheckBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding-left: 35px;
+}
+
+label.withCheckBox input {
+  width: auto;
+  display: none;
+}
+
+label.withCheckBox span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: #edf3f5;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+label.withCheckBox span:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #da4167;
+  border-bottom: 2px solid red;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: .3s;
+}
+label.withCheckBox input:checked+span:after{
+  opacity: 1;
+}
+.themeBlk {
+  background: #F9F9FB;
+  border-radius: 8px;
+  padding: 32px 94px 32px 32px;
+}
+
+.themeBlk > span {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.themeBlk p {
+  margin-bottom: 10px;
+}
+
+.themeBlk p span {
+  margin-right: 11px;
+}
+a.mdlLink {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline; 
+  color: #005395;
+  margin-top: 20px;
+}
+.orsDtl p b {
+  display: block;
+  margin-top: 5px;
+}
 
 
 

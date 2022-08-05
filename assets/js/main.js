@@ -114,6 +114,19 @@
     })
   }
 
+//   Show more or less
+    function ShowMoreLess() { 
+        if (document.querySelectorAll('.showMoreLessNow').length > 0) {
+            let ManagersBtn = document.querySelectorAll('.showMoreLessNow')
+            ManagersBtn.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.target.parentElement.parentElement.parentElement.classList.toggle('showMore')
+                })
+            });
+        }
+    }
+    ShowMoreLess()
+
   // StepForm 
   let closeNow = document.querySelectorAll('.ResetPopup');
   if (closeNow) { 
