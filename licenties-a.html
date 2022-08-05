@@ -45,7 +45,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="active">
+                            <a href="#">
                                 <img src="assets/img/icons/menu/beg.svg" alt="">
                                 <span>Organisaties</span>
                             </a>
@@ -75,7 +75,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" class="active">
                                 <img src="assets/img/icons/menu/cogs.svg" alt="">
                                 <span>Settings</span>
                             </a>
@@ -86,7 +86,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="headerWithActions withGoBACK"> 
-                                <a href="./locaties.html" class="goback">Return</a>
+                                <a href="./licenties.html" class="goback">Return</a>
                                 <div> 
                                     <div class="search_bar">
                                         <div class="mainSearchBox"> 
@@ -140,276 +140,80 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="title"> 
-                                <h2>School a</h2> 
+                                <h2 class="d-flex align-items-center">Licentie a <span class="successStatus">Actief</s></h2> 
                             </div> 
                         </div>
-                        <div class="col-xl-5">
-                            <div class="lktFrmDts">  
+                        <div class="col-xl-12">
+                            <div class="lktFrmDts lcntDtl">  
                                 <form action="#" class="lktAFrm notEditing">
                                     <p>
                                         Kenmerken 
                                         <button type="button" class="goToEdit eddt">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.333 2.00004C11.5081 1.82494 11.716 1.68605 11.9447 1.59129C12.1735 1.49653 12.4187 1.44775 12.6663 1.44775C12.914 1.44775 13.1592 1.49653 13.3879 1.59129C13.6167 1.68605 13.8246 1.82494 13.9997 2.00004C14.1748 2.17513 14.3137 2.383 14.4084 2.61178C14.5032 2.84055 14.552 3.08575 14.552 3.33337C14.552 3.58099 14.5032 3.82619 14.4084 4.05497C14.3137 4.28374 14.1748 4.49161 13.9997 4.66671L4.99967 13.6667L1.33301 14.6667L2.33301 11L11.333 2.00004Z" stroke="#4E4C59" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
+                                            </svg> Bewerken
                                         </button>
                                         <button type="button" class="goToEdit themebtn d-none">Opslaan</button>
                                     </p>
                                     <div class="row"> 
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-4">
                                             <label for="#">
-                                                Naam
-                                                <input type="text" value="Organization" name="" id="">
+                                                Licentie
+                                                <input type="text" value="Name" name="" id="">
+                                            </label>
+                                            <label for="#">
+                                                Verval datum
+                                                <input type="date" value="" name="" id="">
                                             </label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="#">
-                                                License ID
-                                                <input type="text" value="000000" name="" id="">
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <label for="#">
-                                                Organisatie code
-                                                <input type="text" value="000000" name="" id="">
-                                            </label>
-                                        </div> 
-                                        <div class="col-lg-12">
-                                            <label for="#">
-                                                Email
-                                                <input type="text" value="Email address" name="" id="">
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <label for="#">
-                                                Straatnaam
-                                                <input type="text" value="Street name" name="" id="">
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <label for="#">
-                                                Huisnummber
-                                                <input type="text" value="house number" name="" id="">
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <label for="#">
-                                                Postcode
-                                                <input type="text" value="Zip code" name="" id="">
-                                            </label>
-                                        </div> 
-                                        <div class="col-lg-12">
-                                            <label for="#">
-                                                Land
-                                                <input type="text" value="Country" name="" id="">
-                                            </label>
-                                        </div> 
-                                        <div class="col-lg-12">
-                                            <nav>
-                                                <div class="nav justify-content-between" id="nav-tab" role="tablist">
-                                                    <button class="nav-link active" id="nav-Google-tab" data-bs-toggle="tab" data-bs-target="#nav-Google" type="button" role="tab" aria-controls="nav-Google" aria-selected="true">Google</button>
-                                                    <button class="nav-link" id="nav-Azures-tab" data-bs-toggle="tab" data-bs-target="#nav-Azures" type="button" role="tab" aria-controls="nav-Azures" aria-selected="false">Azures</button>
-                                                    <button class="nav-link" id="nav-Connector-tab" data-bs-toggle="tab" data-bs-target="#nav-Connector" type="button" role="tab" aria-controls="nav-Connector" aria-selected="false">Connector.ID</button>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="lncFtcr">
+                                                        <p>Toegang tot <b>Locaties</b></p>
+                                                        <ul>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="not_avileable">Toevoegen</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </nav>
-                                            <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="nav-Google" role="tabpanel" aria-labelledby="nav-Google-tab">  
-                                                    <label for="#">
-                                                        Client
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
-                                                    <label for="#">
-                                                        Secret
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
-                                                    <label for="#">
-                                                        Tenant
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
+                                                <div class="col-lg-6">
+                                                    <div class="lncFtcr">
+                                                        <p>Toegang tot <b>Locaties</b></p>
+                                                        <ul>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="not_avileable">Toevoegen</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-Azures" role="tabpanel" aria-labelledby="nav-Azures-tab">
-                                                    <label for="#">
-                                                        Client
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
-                                                    <label for="#">
-                                                        Secret
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
-                                                    <label for="#">
-                                                        Tenant
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
+                                                <div class="col-lg-6">
+                                                    <div class="lncFtcr">
+                                                        <p>Toegang tot <b>Locaties</b></p>
+                                                        <ul>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="not_avileable">Toevoegen</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-Connector" role="tabpanel" aria-labelledby="nav-Connector-tab">
-                                                    <label for="#">
-                                                        Client
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
-                                                    <label for="#">
-                                                        Secret
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
-                                                    <label for="#">
-                                                        Tenant
-                                                        <input type="text" value="text input" name="" id="">
-                                                    </label>
+                                                <div class="col-lg-6">
+                                                    <div class="lncFtcr">
+                                                        <p>Toegang tot <b>Locaties</b></p>
+                                                        <ul>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="avileable">Toevoegen</li>
+                                                            <li class="not_avileable">Toevoegen</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <a href="javascript:void(0)" class="mdlLink text-center ResetPopup" data-bs-toggle="modal" data-bs-target="#OrgPP">Organisatie verwijderen</a>
+                                        </div> 
+                                    </div> 
                                 </form>
                             </div>
-                        </div>
-                        <div class="col-xl-7">
-                            <div class="lktRt"> 
-                                <nav>
-                                    <div class="nav" id="nav-tab" role="tablist">
-                                        <button class="nav-link active" id="nav-Locaties-tab" data-bs-toggle="tab" data-bs-target="#nav-Locaties" type="button" role="tab" aria-controls="nav-Locaties" aria-selected="true">Locaties</button>
-                                        <button class="nav-link" id="nav-Gebruikers-tab" data-bs-toggle="tab" data-bs-target="#nav-Gebruikers" type="button" role="tab" aria-controls="nav-Gebruikers" aria-selected="false">Gebruikers</button>
-                                        <button class="nav-link" id="nav-Koppelingen-tab" data-bs-toggle="tab" data-bs-target="#nav-Koppelingen" type="button" role="tab" aria-controls="nav-Koppelingen" aria-selected="false">Koppelingen</button>
-                                    </div>
-                                </nav>
-                                <div class="tab-content" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-Locaties" role="tabpanel" aria-labelledby="nav-Locaties-tab">  
-                                        <form id="searchform"> 
-                                            <div class="mSb" style="position: relative"> 
-                                                <input type="text" id="search-bar" autocomplete="off" placeholder="Zoek op locatie of contact.."/>
-                                                <ul class="output" style="display:none;"></ul>
-                                                <button type="submit" id="submit">
-                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#005395" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <path d="M14 14L11.1 11.1" stroke="#005395" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                </button> 
-                                            </div>
-                                            <span style="display:block;text-align:right;margin-top:5px">177 resultaten</span>
-                                        </form>
-                                        <div class="tbl">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nummer</th>
-                                                        <th>Plekken</th>
-                                                        <th>Status</th> 
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                    <tr class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">
-                                                        <td><a href="javascript:void(0)">School a</a></td>
-                                                        <td><a href="javascript:void(0)">mailadres@schoolname...</a></td>
-                                                        <td><a href="javascript:void(0)">300</a></td>
-                                                        <td><a href="javascript:void(0)">640</a></td>
-                                                        <td>
-                                                            <div class="tblActions">
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/trash.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/pen.svg" alt=""></a>
-                                                                <a href="javascript:void(0)"><img src="assets/img/icons/key.svg" alt=""></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr> 
-                                                </tbody>
-                                            </table> 
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-Gebruikers" role="tabpanel" aria-labelledby="nav-Gebruikers-tab">...</div>
-                                    <div class="tab-pane fade" id="nav-Koppelingen" role="tabpanel" aria-labelledby="nav-Koppelingen-tab">...</div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div> 

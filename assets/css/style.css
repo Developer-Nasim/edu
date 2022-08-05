@@ -1205,14 +1205,14 @@ button.close-this-popup img {
 }
 .mdl_actions button {margin-left: unset;}
 
-.showSuccess form.withFrm {
+.showSuccessnOW form.withFrm {
   display: none;
 }
 
-.showSuccess .modal-dialog {
+.showSuccessnOW .modal-dialog {
   max-width: 500px !important;
 }
-.showSuccess .successPopup {
+.showSuccessnOW .successPopup {
   display: block !important;
 }
 .frmActBtns.withDots {
@@ -1511,7 +1511,9 @@ div#nav-tab button.active:after {
   margin: auto;
   margin-bottom: 15px;
 }
-
+.showSuccessnOW .Rm1stActive{
+  display: none;
+}
 
 
 
@@ -1825,16 +1827,14 @@ button.Less_more span:last-child {
   margin: 0;
   margin-left: 25px;
   font-size: 16px;
-  line-height: 32px;
-/* identical to box height, or 200% */
+  line-height: 32px; 
   color: #000000;
 }
 
 .mngBlk h5 span {
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
-/* identical to box height, or 143% */
+  line-height: 20px; 
   letter-spacing: 0.2px;
   color: #000000;
   display: block;
@@ -2058,3 +2058,96 @@ a.mdlLink {
 
 
 
+
+/* Setting Manager  page css END && Licence PAGE css STARTED */
+.lncFtcr {
+  margin-top: 30px;
+}
+
+form.lktAFrm .lncFtcr p, 
+.lncFtcr p {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  color: #000000;
+}
+
+
+form.lktAFrm .lncFtcr p > b,
+.lncFtcr p > b {
+  color: #005395;
+}
+
+.lncFtcr li {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 5px;
+}
+.lncFtcr li:after {
+  content: "x";
+  position: absolute;
+  border: 1px solid #D4E0EC;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: cursive;
+  padding-bottom: 5px;
+  color: #D4E0EC;
+}
+
+.lncFtcr li.avileable:after {
+  background: #005395;
+/* Dark blue */
+  border: 1px solid #005395;
+  color: #005395;
+}
+
+.lncFtcr li.avileable:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  top: 44%;
+  left: 7px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  transform: translateY(-50%) rotate(40deg);
+  z-index: 2;
+}
+.lcntDtl .lncFtcr li:after {
+  border: none;
+  background: none;
+}
+.lncFtcr li.avileable:after{
+  display: none;
+}
+.lncFtcr li.avileable:before {
+  border-color: #005395;
+}
+.lcntDtl button.goToEdit.eddt {
+  width: auto;
+  padding: 10px 20px;
+}
+
+.lcntDtl button.goToEdit.eddt svg {
+  margin-right: 8px;
+}
+.dashLeft-content .title h2 span.successStatus {
+  margin-left: 30px;
+}
+
+
+
+
+/* Licence  page css END && Settings Manager PAGE css STARTED */
+/* Lessons  page css END && Settings Manager PAGE css STARTED */

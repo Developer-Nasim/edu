@@ -53,7 +53,7 @@
     if ($('.showSuccess').length > 0) {
       $('.showSuccess').click((e) => {
         const targetModalBody = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-        targetModalBody.classList.add('showSuccess') 
+        targetModalBody.classList.add('showSuccessnOW') 
       })
     }
   }
@@ -163,98 +163,105 @@
       }
       StepReset()
       function SuccessPopup() {
-          let Modal = document.querySelector('.modal.showSuccess')
+          let Modal = document.querySelector('.modal.showSuccessnOW')
           if (Modal) {
-            Modal.classList.remove('showSuccess')
+            Modal.classList.remove('showSuccessnOW')
           }
+          if (document.querySelectorAll('.showSuccessnOW').length > 0) {
+            
+            document.querySelectorAll('.showSuccessnOW').forEach(el => {
+                el.classList.remove('showSuccessnOW')
+            })
+          }
+
       }
       SuccessPopup()
   }
   function StepForm() { 
- 
-    let MainSteps = document.querySelector('.formSteps')
-    let AllDOts = document.querySelector('.stepDots')
-    let NextBtns = MainSteps.querySelectorAll('.nextStep') 
-    if (MainSteps.querySelectorAll('.nextStep') && MainSteps.querySelectorAll('.nextStep').length > 0) { 
-        NextBtns.forEach(NextBtn => { 
-            NextBtn.addEventListener('click', (e) => { 
-                function StepChange() { 
-                    let AllSteps = MainSteps.querySelectorAll('.step');
-                    let StepActive = MainSteps.querySelector('.step.active');
+    if (document.querySelectorAll('.formSteps').length > 0) { 
+        let MainSteps = document.querySelector('.formSteps')
+        let AllDOts = document.querySelector('.stepDots')
+        let NextBtns = MainSteps.querySelectorAll('.nextStep') 
+        if (MainSteps.querySelectorAll('.nextStep') && MainSteps.querySelectorAll('.nextStep').length > 0) { 
+            NextBtns.forEach(NextBtn => { 
+                NextBtn.addEventListener('click', (e) => { 
+                    function StepChange() { 
+                        let AllSteps = MainSteps.querySelectorAll('.step');
+                        let StepActive = MainSteps.querySelector('.step.active');
 
-                    if (StepActive.nextElementSibling.classList.contains('endStep')) {
-                        MainSteps.classList.add('LastStep')
-                    }
+                        if (StepActive.nextElementSibling.classList.contains('endStep')) {
+                            MainSteps.classList.add('LastStep')
+                        }
 
-                    if (StepActive.nextElementSibling.classList.contains('step')) {
-                        StepActive.nextElementSibling.classList.add('active')
-                        StepActive.classList.remove('active') 
-                        MainSteps.classList.remove('firstStep')
-                    }else{
-                        AllSteps[0].classList.add('active')  
-                        MainSteps.classList.add('firstStep')
-                        MainSteps.classList.remove('LastStep')
-                    }
-                }
-                StepChange()
-                function DotChange() { 
-                    if (document.querySelectorAll('.dt').length > 0) { 
-                        let AllSDotss = AllDOts.querySelectorAll('.dt');
-                        let DotActive = AllDOts.querySelector('.dt.active');
-                        
-                        if (DotActive.nextElementSibling && DotActive.nextElementSibling.classList.contains('dt')) {
-                            DotActive.nextElementSibling.classList.add('active')
-                            DotActive.classList.remove('active')
+                        if (StepActive.nextElementSibling.classList.contains('step')) {
+                            StepActive.nextElementSibling.classList.add('active')
+                            StepActive.classList.remove('active') 
+                            MainSteps.classList.remove('firstStep')
                         }else{
-                            AllSDotss[0].classList.add('active')
-                            DotActive.classList.remove('active')
+                            AllSteps[0].classList.add('active')  
+                            MainSteps.classList.add('firstStep')
+                            MainSteps.classList.remove('LastStep')
                         }
                     }
-                }
-                DotChange()
-            
-            })
-        })
-    }
-    if (MainSteps.querySelector('.prevNext') && MainSteps.querySelectorAll('.prevNext').length > 0) { 
-        let PrevBtns = MainSteps.querySelectorAll('.prevNext')
-        PrevBtns.forEach(PrevBtn => { 
-            PrevBtn.addEventListener('click', (e) => {
-                function StepChange() { 
-                    let AllSteps = MainSteps.querySelectorAll('.step');
-                    let StepActive = MainSteps.querySelector('.step.active'); 
-                    if (StepActive.previousElementSibling.classList.contains('startStep')) {
-                        MainSteps.classList.add('firstStep')
-                        MainSteps.classList.remove('LastStep') 
-                    } 
-                    if (StepActive.previousElementSibling.classList.contains('step')) {
-                        StepActive.previousElementSibling.classList.add('active')
-                        StepActive.classList.remove('active')
-                    }else{
-                        AllSteps[0].classList.add('active') 
-                    }
-                }
-                StepChange()
-                function DotChange() { 
-                    if (document.querySelectorAll('.dt').length > 0) { 
-                        let AllSDotss = AllDOts.querySelectorAll('.dt');
-                        let DotActive = AllDOts.querySelector('.dt.active');
-                        
-                        if (DotActive.previousElementSibling && DotActive.previousElementSibling.classList.contains('dt')) {
-                            DotActive.previousElementSibling.classList.add('active')
-                            DotActive.classList.remove('active')
-                        }else{
-                            AllSDotss[0].classList.add('active')
-                            DotActive.classList.remove('active')
+                    StepChange()
+                    function DotChange() { 
+                        if (document.querySelectorAll('.dt').length > 0) { 
+                            let AllSDotss = AllDOts.querySelectorAll('.dt');
+                            let DotActive = AllDOts.querySelector('.dt.active');
+                            
+                            if (DotActive.nextElementSibling && DotActive.nextElementSibling.classList.contains('dt')) {
+                                DotActive.nextElementSibling.classList.add('active')
+                                DotActive.classList.remove('active')
+                            }else{
+                                AllSDotss[0].classList.add('active')
+                                DotActive.classList.remove('active')
+                            }
                         }
                     }
-                }
-                DotChange()
-            
+                    DotChange()
+                
+                })
             })
-        });
+        }
+        if (MainSteps.querySelector('.prevNext') && MainSteps.querySelectorAll('.prevNext').length > 0) { 
+            let PrevBtns = MainSteps.querySelectorAll('.prevNext')
+            PrevBtns.forEach(PrevBtn => { 
+                PrevBtn.addEventListener('click', (e) => {
+                    function StepChange() { 
+                        let AllSteps = MainSteps.querySelectorAll('.step');
+                        let StepActive = MainSteps.querySelector('.step.active'); 
+                        if (StepActive.previousElementSibling.classList.contains('startStep')) {
+                            MainSteps.classList.add('firstStep')
+                            MainSteps.classList.remove('LastStep') 
+                        } 
+                        if (StepActive.previousElementSibling.classList.contains('step')) {
+                            StepActive.previousElementSibling.classList.add('active')
+                            StepActive.classList.remove('active')
+                        }else{
+                            AllSteps[0].classList.add('active') 
+                        }
+                    }
+                    StepChange()
+                    function DotChange() { 
+                        if (document.querySelectorAll('.dt').length > 0) { 
+                            let AllSDotss = AllDOts.querySelectorAll('.dt');
+                            let DotActive = AllDOts.querySelector('.dt.active');
+                            
+                            if (DotActive.previousElementSibling && DotActive.previousElementSibling.classList.contains('dt')) {
+                                DotActive.previousElementSibling.classList.add('active')
+                                DotActive.classList.remove('active')
+                            }else{
+                                AllSDotss[0].classList.add('active')
+                                DotActive.classList.remove('active')
+                            }
+                        }
+                    }
+                    DotChange()
+                
+                })
+            });
+        } 
     }
- 
   } 
   StepForm()
 
