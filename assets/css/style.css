@@ -2158,5 +2158,128 @@ form.lktAFrm .lncFtcr p > b,
 
 
 
-/* Licence  page css END && Settings Manager PAGE css STARTED */
+/* Licence  page css END && Auths PAGE css STARTED */
+
+
+
+.auths-area {
+  background: linear-gradient(224.93deg, #005395 16.06%, #003B6A 57.05%, #003A68 83.98%);
+  min-height: 100vh;
+  text-align: center;
+  padding: 30px 0;
+  padding-top: 100px;
+}
+
+.auths-area img.logo {
+  max-width: 313px;
+}
+
+.auths-area p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+/* identical to box height, or 200% */
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 70px;
+  margin-bottom: 25px;
+}
+.auths-area .themebtn,
+.auths_wrp .themebtn.themebtn2 {
+  width: 100%;
+  margin-bottom: 15px;
+  display: block;
+}
+.dbd {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+/* identical to box height, or 133% */
+  text-align: center;
+}
+
+.dbd:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  background: #fff;
+}
+
+.dbd span {
+  background: #023e70;
+  padding: 0 10px;
+}
+.auths-area-two {
+  background: #EDF3F5;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+.auth-top {
+  text-align: center;
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.auth-top img {
+  max-width: 310px;
+}
+
+.auth-bottom {
+  padding-top: 60px;
+}
+
+.auths_wrps {
+  text-align: center;
+}
+
+.auths_wrps p {
+  margin-bottom: 0px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #4E4C59;
+}
+form.auths_g_auth input {
+  background: #F9F9FB;
+}
+form.auths_g_auth button.themebtn {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+form.auths_g_auth a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline; 
+  color: #005395;
+  display: block;
+}
+input:invalid {
+  border: 1px solid red;
+  background: #ff00001f !important;
+}
+.invalid-feedback{
+  font-size: 14px;
+}
+/* Auths page css END && Settings Manager PAGE css STARTED */
+/* Lessons  page css END && Settings Manager PAGE css STARTED */
+/* Lessons  page css END && Settings Manager PAGE css STARTED */
 /* Lessons  page css END && Settings Manager PAGE css STARTED */
