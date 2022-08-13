@@ -83,9 +83,10 @@
                         <div class="col-lg-12">
                             <div class="headerWithActions"> 
                                 <div class="search_bar">
-                                    <div class="mainSearchBox"> 
-                                        <input name='tags' id="searcBard" placeholder='Zoek op trefwoorden bijv: Rooster, Joep'>
-                                    </div>
+                                    <form id="header_searchform" action="#">  
+                                        <input type="text" id="header-search-bar" autocomplete="off" placeholder="Zoek op trefwoorden bijv: Rooster, Joep"/>
+                                        <ul class="header_output" style="display:none;"></ul>  
+                                    </form> 
                                     <img class="searchIconItIs hxBtn" src="assets/img/search.svg" alt="">
                                 </div>
                                 <div class="notifHere">
@@ -266,20 +267,11 @@
                                         </label> 
                                         <label for="#">
                                             Type
-                                            <div class="multiselect" tabindex="0">
-                                                <div class="mslabel" onfocus=""> <!-- placeholder --> </div>
-                                                <div class="mstogglebtn" tabindex="-1">&dtrif;</div>
-                                                <div class="mslist">
-                                                  <div class="msitem" onclick="var parent = this.parentElement; var chk = this.children[0].checked; if(chk == false){this.children[0].checked = true;} else{this.children[0].checked = false;} var collection=parent.getElementsByTagName('input');var countChked = 0; var res = ''; for(var i=0; i< collection.length;i++){if(collection[i].checked == true){if(countChked==0){res += collection[i].value}else{res += ', '+collection[i].value;}countChked++}}if(countChked > 0){parent.parentElement.children[0].innerText = res;}else{parent.parentElement.children[0].innerText = 'Select some...';}">
-                                                    <input type="checkbox" class="d-none" name="mydata[]" value="Option 1" id="optionOne" />
-                                                    <label for="optionOne">Option 1</label>
-                                                  </div>
-                                                  <div class="msitem" onclick="var parent = this.parentElement; var chk = this.children[0].checked; if(chk == false){this.children[0].checked = true;} else{this.children[0].checked = false;} var collection=parent.getElementsByTagName('input');var countChked = 0; var res = ''; for(var i=0; i< collection.length;i++){if(collection[i].checked == true){if(countChked==0){res += collection[i].value}else{res += ', '+collection[i].value;}countChked++}}if(countChked > 0){parent.parentElement.children[0].innerText = res;}else{parent.parentElement.children[0].innerText = 'Select some...';}">
-                                                    <input type="checkbox" class="d-none" name="mydata[]" value="Option 2" id="optionTwo" />
-                                                    <label for="optionTwo">Option 2</label>
-                                                  </div>
-                                                </div>
-                                            </div> 
+                                            <select name="field1" id="field1" multiple multiselect-search="true" multiselect-search="true" multiselect-hide-x="true">
+                                                <option value="Variants">Option</option> 
+                                                <option value="Variants4">Option 3</option>
+                                                <option value="Variants5">Option 4</option> 
+                                            </select>   
                                         </label> 
                                         <label for="#">
                                             Voorkeur docent
@@ -313,10 +305,15 @@
                                             </div>
                                         </div>
                                         <label for="#">
-                                            Variants
-                                            <div class="mainSearchBox"> 
-                                                <input name='tags' id="searcBard" value="variant1" placeholder='Search variant..'>
-                                            </div>
+                                            Variants 
+                                            <select name="field1" id="field1" multiple multiselect-search="true" multiselect-search="true" multiselect-hide-x="true">
+                                                <option value="Variants">Variants</option>
+                                                <option selected value="Variants2">Variants 2</option>
+                                                <option selected value="Variants3">Variants 3</option>
+                                                <option value="Variants4">Variants 3</option>
+                                                <option value="Variants5">Variants 4</option>
+                                                <option value="Variants6">Variants 5</option>
+                                            </select>  
                                         </label>   
                                     </div>
                                 </div> 
@@ -345,6 +342,7 @@
 		<!-- JS here --> 
         <script src="assets/js/jquery-3.4.1.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/multiselect-dropdown.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>  

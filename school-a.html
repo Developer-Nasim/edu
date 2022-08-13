@@ -89,9 +89,10 @@
                                 <a href="./locaties.html" class="goback">Return</a>
                                 <div> 
                                     <div class="search_bar">
-                                        <div class="mainSearchBox"> 
-                                            <input name='tags' id="searcBard" placeholder='Zoek op trefwoorden bijv: Rooster, Joep'>
-                                        </div>
+                                        <form id="header_searchform" action="#">  
+                                            <input type="text" id="header-search-bar" autocomplete="off" placeholder="Zoek op trefwoorden bijv: Rooster, Joep"/>
+                                            <ul class="header_output" style="display:none;"></ul>  
+                                        </form> 
                                         <img class="searchIconItIs hxBtn" src="assets/img/search.svg" alt="">
                                     </div>
                                     <div class="notifHere">
@@ -264,6 +265,8 @@
                         </div>
                         <div class="col-xl-7">
                             <div class="lktRt"> 
+                        
+                                
                                 <nav>
                                     <div class="nav" id="nav-tab" role="tablist">
                                         <button class="nav-link active" id="nav-Locaties-tab" data-bs-toggle="tab" data-bs-target="#nav-Locaties" type="button" role="tab" aria-controls="nav-Locaties" aria-selected="true">Locaties</button>
@@ -691,6 +694,7 @@
 		<!-- JS here --> 
         <script src="assets/js/jquery-3.4.1.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/multiselect-dropdown.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>  

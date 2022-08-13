@@ -85,9 +85,10 @@
                                 <a href="./lessons.html" class="goback">Return</a>
                                 <div> 
                                     <div class="search_bar">
-                                        <div class="mainSearchBox"> 
-                                            <input name='tags' id="searcBard" placeholder='Zoek op trefwoorden bijv: Rooster, Joep'>
-                                        </div>
+                                        <form id="header_searchform" action="#">  
+                                            <input type="text" id="header-search-bar" autocomplete="off" placeholder="Zoek op trefwoorden bijv: Rooster, Joep"/>
+                                            <ul class="header_output" style="display:none;"></ul>  
+                                        </form> 
                                         <img class="searchIconItIs hxBtn" src="assets/img/search.svg" alt="">
                                     </div>
                                     <div class="notifHere">
@@ -142,7 +143,7 @@
                         <div class="col-xl-4">
                             <div class="lktFrmDts">  
                                 <div class="adminCounts locatieA">
-                                    <div class="adminCountsLeft"> 
+                                    <div class="adminCountsLeft onlyTwoClmn"> 
                                         <div class="adcBlk">
                                             <span>Duur</span>
                                             <p>0:50</p>
@@ -167,9 +168,14 @@
                                         <div class="col-lg-12">
                                             <label for="#">
                                                 Les type
-                                                <div class="mainSearchBox"> 
-                                                    <input name='tags' id="searcBard" value="variant1" placeholder='Search variant..'>
-                                                </div>
+                                                <select name="field1" id="field1" multiple multiselect-search="true" multiselect-hide-x="true">
+                                                    <option value="Variants">Variants</option>
+                                                    <option selected value="Variants2">Variants 2</option>
+                                                    <option selected value="Variants3">Variants 3</option>
+                                                    <option value="Variants4">Variants 3</option>
+                                                    <option value="Variants5">Variants 4</option>
+                                                    <option value="Variants6">Variants 5</option>
+                                                </select>   
                                             </label>
                                         </div>
                                         <div class="col-lg-6">
@@ -197,37 +203,51 @@
                             </div>
                         </div> 
                         <div class="col-xl-4">
-                            <div class="tgList"> 
+                            <div class="tgList offMode"> 
                                 <button type="button" class="themebtn themebtn2">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.333 2.00004C11.5081 1.82494 11.716 1.68605 11.9447 1.59129C12.1735 1.49653 12.4187 1.44775 12.6663 1.44775C12.914 1.44775 13.1592 1.49653 13.3879 1.59129C13.6167 1.68605 13.8246 1.82494 13.9997 2.00004C14.1748 2.17513 14.3137 2.383 14.4084 2.61178C14.5032 2.84055 14.552 3.08575 14.552 3.33337C14.552 3.58099 14.5032 3.82619 14.4084 4.05497C14.3137 4.28374 14.1748 4.49161 13.9997 4.66671L4.99967 13.6667L1.33301 14.6667L2.33301 11L11.333 2.00004Z" stroke="#4E4C59" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
                                 <p><img src="assets/img/icons/star_pink.svg" alt=""> Voorkeur docent</p>
-                                <ul>
-                                    <li>Prefer_teacher_ID</li>
-                                    <li>Prefer_teacher_ID</li>
-                                    <li>variant 1 long</li>
-                                    <li>variant 1</li>
-                                    <li>variant 1 long</li>
-                                </ul>
+                                <select name="field1" id="field1" multiple multiselect-search="true" multiselect-hide-x="true">
+                                    <option value="Variants">Variants</option>
+                                    <option selected value="Variants2">Variants 2</option>
+                                    <option selected value="Variants32">Variants 3</option>
+                                    <option selected value="Variants3r2">Variants 2</option>
+                                    <option selected value="Variants3d">Variants 3</option>
+                                    <option selected value="Variants2tw">Variants 2</option>
+                                    <option selected value="Variants3rt">Variants 3</option>
+                                    <option selected value="Variants2wrt">Variants 2</option>
+                                    <option  value="Variants3r3">Variants 3</option>
+                                    <option value="Variants4544">Variants 3</option>
+                                    <option value="Variants43545">Variants 4</option>
+                                    <option value="Variants454356">Variants 5</option>
+                                </select>   
                             </div>
                         </div>
                         <div class="col-xl-4">
-                            <div class="tgList"> 
+                            <div class="tgList offMode"> 
                                 <button type="button" class="themebtn themebtn2">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.333 2.00004C11.5081 1.82494 11.716 1.68605 11.9447 1.59129C12.1735 1.49653 12.4187 1.44775 12.6663 1.44775C12.914 1.44775 13.1592 1.49653 13.3879 1.59129C13.6167 1.68605 13.8246 1.82494 13.9997 2.00004C14.1748 2.17513 14.3137 2.383 14.4084 2.61178C14.5032 2.84055 14.552 3.08575 14.552 3.33337C14.552 3.58099 14.5032 3.82619 14.4084 4.05497C14.3137 4.28374 14.1748 4.49161 13.9997 4.66671L4.99967 13.6667L1.33301 14.6667L2.33301 11L11.333 2.00004Z" stroke="#4E4C59" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
                                 <p><img src="assets/img/icons/star_pink.svg" alt=""> Voorkeur docent</p>
-                                <ul>
-                                    <li>Prefer_teacher_ID</li>
-                                    <li>Prefer_teacher_ID</li>
-                                    <li>variant 1 long</li>
-                                    <li>variant 1</li>
-                                    <li>variant 1 long</li>
-                                </ul>
+                                <select name="field1" id="field1" multiple multiselect-search="true" multiselect-hide-x="true">
+                                    <option value="Variants">Variants</option>
+                                    <option selected value="Variants2">Variants 2</option>
+                                    <option selected value="Variants32">Variants 3</option>
+                                    <option selected value="Variants3r2">Variants 2</option>
+                                    <option selected value="Variants3d">Variants 3</option>
+                                    <option selected value="Variants2tw">Variants 2</option>
+                                    <option selected value="Variants3rt">Variants 3</option>
+                                    <option selected value="Variants2wrt">Variants 2</option>
+                                    <option  value="Variants3r3">Variants 3</option>
+                                    <option value="Variants4544">Variants 3</option>
+                                    <option value="Variants43545">Variants 4</option>
+                                    <option value="Variants454356">Variants 5</option>
+                                </select>   
                             </div>
                         </div>
                     </div>
@@ -241,6 +261,7 @@
 		<!-- JS here --> 
         <script src="assets/js/jquery-3.4.1.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/multiselect-dropdown.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>  

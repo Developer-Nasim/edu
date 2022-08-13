@@ -80,9 +80,10 @@
                         <div class="col-lg-12">
                             <div class="headerWithActions"> 
                                 <div class="search_bar">
-                                    <div class="mainSearchBox"> 
-                                        <input name='tags' id="searcBard" placeholder='Zoek op trefwoorden bijv: Rooster, Joep'>
-                                    </div>
+                                    <form id="header_searchform" action="#">  
+                                        <input type="text" id="header-search-bar" autocomplete="off" placeholder="Zoek op trefwoorden bijv: Rooster, Joep"/>
+                                        <ul class="header_output" style="display:none;"></ul>  
+                                    </form> 
                                     <img class="searchIconItIs hxBtn" src="assets/img/search.svg" alt="">
                                 </div>
                                 <div class="notifHere">
@@ -422,6 +423,7 @@
 		<!-- JS here --> 
         <script src="assets/js/jquery-3.4.1.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/multiselect-dropdown.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>  

@@ -26,7 +26,6 @@
         </style>
     </head>
     <body>   
-	    
         <!-- dasboard-area STARTED -->
         <div class="dasboard-area">
             <div class="dashLeft">
@@ -89,9 +88,10 @@
                                 <a href="./groups.html" class="goback">Return</a>
                                 <div> 
                                     <div class="search_bar">
-                                        <div class="mainSearchBox"> 
-                                            <input name='tags' id="searcBard" placeholder='Zoek op trefwoorden bijv: Rooster, Joep'>
-                                        </div>
+                                        <form id="header_searchform" action="#">  
+                                            <input type="text" id="header-search-bar" autocomplete="off" placeholder="Zoek op trefwoorden bijv: Rooster, Joep"/>
+                                            <ul class="header_output" style="display:none;"></ul>  
+                                        </form> 
                                         <img class="searchIconItIs hxBtn" src="assets/img/search.svg" alt="">
                                     </div>
                                     <div class="notifHere">
@@ -224,16 +224,23 @@
                                         </div> 
                                         <div class="col-lg-12"> 
                                             <label for="#">
-                                                Variants
-                                                <div class="mainSearchBox"> 
-                                                    <input name='tags' id="searcBard" value="variant1" placeholder='Search variant..'>
-                                                </div>
+                                                Variants 
+                                                <select name="field1" id="field1" multiple multiselect-search="true" multiselect-hide-x="true">
+                                                    <option value="Variants">Variants</option>
+                                                    <option selected value="Variants2">Variants 2</option>
+                                                    <option selected value="Variants3">Variants 3</option>
+                                                    <option value="Variants4">Variants 3</option>
+                                                    <option value="Variants5">Variants 4</option>
+                                                    <option value="Variants6">Variants 5</option>
+                                                </select> 
                                             </label>   
+                                        </div>
+                                        <div class="col-lg-6">
                                             <label for="#">
                                                 Studenten
                                                 <input type="text" value="Students" name="" id="">
                                             </label>
-                                        </div>  
+                                        </div>
                                     </div> 
                                 </form>
                             </div>
@@ -495,6 +502,7 @@
 		<!-- JS here --> 
         <script src="assets/js/jquery-3.4.1.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/multiselect-dropdown.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>  

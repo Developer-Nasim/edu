@@ -38,7 +38,7 @@
       if (searchBtn.length > 0) {
           searchBtn.forEach(btn => {
               btn.addEventListener('click', (e) => {
-                  let searchBlk = e.target.parentElement.querySelector('.mainSearchBox');
+                  let searchBlk = e.target.parentElement;
                   searchBlk.classList.toggle('show')
                   
               })
@@ -74,20 +74,43 @@
   // Edit mode setup 
   if ($('.goToEdit').length > 0) {
     let EBTN = $('.goToEdit');
-    EBTN.click((e) => {
-        $('body').toggleClass('editmode')
-        if ($('.lktAFrm').length > 0) {
-            $('.lktAFrm').toggleClass('notEditing')
-        }
+//   https://codepen.io/caseymhunt/pen/ARgpxO
+    let AllEdBtns = document.querySelectorAll('.goToEdit');
+    // goToEdit
+    AllEdBtns.forEach(EdBtn => {
+        EdBtn.addEventListener('click', () => { 
+            if (EdBtn.parentElement.classList.contains('lktAFrm')) {
+                $('body').toggleClass('editmode')
+                let AddClasses = EdBtn.parentElement;
+                AddClasses.classList.toggle('notEditing')
+            }else if (EdBtn.parentElement.parentElement.classList.contains('lktAFrm')) {
+                $('body').toggleClass('editmode')
+                let AddClasses = EdBtn.parentElement.parentElement;
+                AddClasses.classList.toggle('notEditing')
+            } else if (EdBtn.parentElement.parentElement.parentElement.classList.contains('lktAFrm')) {
+                $('body').toggleClass('editmode')
+                let AddClasses = EdBtn.parentElement.parentElement.parentElement;
+                AddClasses.classList.toggle('notEditing')
+            } else if (EdBtn.parentElement.parentElement.parentElement.parentElement.classList.contains('lktAFrm')) {
+                $('body').toggleClass('editmode')
+                let AddClasses = EdBtn.parentElement.parentElement.parentElement.parentElement;
+                AddClasses.classList.toggle('notEditing')
+            }
+        })
+    })
+ 
+  }
+
+    // Change input types in editing mode
+    function ChangeInpTyps() {
+        
         if ($('.IntoTime').length > 0) {
             if ($('.IntoTime').attr('type') == "text") {
                 $('.IntoTime').attr('type', 'time')
             }else{
                 $('.IntoTime').attr('type', 'text')
             } 
-        }
-
-
+        } 
 
         if ($('.IntoSelect').length > 0) {
             let SInps = document.querySelectorAll('.IntoSelect')
@@ -111,8 +134,9 @@
             })
 
         }
-    })
-  }
+    }
+    ChangeInpTyps()
+
 
   function FormValidation() {
     if (document.querySelectorAll('.needs-validation').length > 0) {
