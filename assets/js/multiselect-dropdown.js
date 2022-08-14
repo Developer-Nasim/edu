@@ -32,7 +32,7 @@ style.innerHTML = `
 }
 .multiselect-dropdown span.optext .optdel:hover { color: #c66;}
 .multiselect-dropdown span.placeholder{
-  color:#ced4da;
+  color:#585858;
 }
 .multiselect-dropdown-list-wrapper{ 
   z-index: 100; 

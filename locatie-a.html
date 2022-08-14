@@ -249,8 +249,8 @@
                         <div class="col-xl-7">
                             <div class="lktRt"> 
                                 <div class="lktA-topbar">
-                                    <button type="button">Lokalen</button>
-                                    <button type="button" class="ResetPopup" data-bs-toggle="modal" data-bs-target="#FrmMdl">Nieuwe lokaal</button>
+                                    <button type="button" >Lokalen</button>
+                                    <button type="button" class="ResetPopup lithWithLine" data-bs-toggle="modal" data-bs-target="#FrmMdl">Nieuwe lokaal</button>
                                 </div>
                                 <form id="searchform"> 
                                     <div class="mSb" style="position: relative"> 
@@ -407,6 +407,7 @@
                                         Capaciteit
                                         <input type="text" value="Amount" name="" id="">
                                     </label>
+                                    <hr>
                                     <div class="switches">
                                         Toegankelijkheid
                                         <div class="row">
@@ -434,9 +435,11 @@
                                 <div class="col-lg-6">
                                     <label for="#">
                                         Variant 
-                                        <div class="mainSearchBox"> 
-                                            <input name='tags' id="searcBard" value="variant1" placeholder='Search variant..'>
-                                        </div>
+                                        <select name="field1" id="field1" multiple multiselect-search="true" multiselect-search="true" multiselect-hide-x="true">
+                                            <option value="Variants" selected>Variant</option> 
+                                            <option value="Variants4">Variant 3</option>
+                                            <option value="Variants5">Variant 4</option> 
+                                        </select>   
                                     </label>
                                     <label for="#" class="capacityLabel">
                                         Klassen opstelling

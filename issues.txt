@@ -1,23 +1,53 @@
 1. When you search, i miss the dropdown. to auto fill. (so you can type and autofill)
 == Fixed
-2. On group details you see a input field called "variants" that is an autofill dropdown, so you can't type but only add dropdown items to it. like a multiple dropdown html
-== 
-3. At lesson detail you'll find at the top of the edit section 2 statics, but the space between them aren't the same as in the design.
-4. Also at lesson detail i can't edit: "voorkeur docent" two input fields. those fields are the same at group details like: "variants", just an autofill dropdown with multiple options to add.
-5. By add new lesson you'll find again the "variants" input field, this input field need to be an autofill multiple option field.
-6. At license detail page when you edit, the fields about "toevoegen" with a V mark before it need to change into a checkfield when you click on the edit button.
-7. At location detail page on the right side you have created two buttons called: "lokalen" and "Nieuw locatie", the word "lokalen" need to be just a title and the "Nieuw locatie" need to be a button to open a new location popup.
-8. At adding a new lokaal There is missing a line between last input field "capiciteiten" and begin title "toegankelijkheid". Please look carefully at the design of adding a new lokaal. Also here you'll find variants inputfield, this need to be the same like i described ealier.
-9. At all the login pages with the blue gradiant behind it I miss the correct button color.
-10. At manager dashboard, fix the same search on right top, like at point 1.
-11. At the settings pages you'll find by admin the button "Log uit" and by manager you'll find it as well like the button "create display link" those buttons does have a shadow behind it, in the design there is no shadow, so please follow the design rules.
-12. When I click on "reset authenticator" i miss the popup at the manager settings page.
-13. At the settings page "settings-manager.html" When I click on "activeren" an pop-up opens with a dropdown (this need to be file-upload) and a box (this need to be a checkbox)
-14.At user details you'll find as well the option "variants" this need to be as well just an autofill dropdown with multiple options.
-15. When I click on the pencil at user detail page, the "beschikbaarheid" section with also a pencil, will open as well, that is not possible, you need to open and save them separately.
-16. On page user details at section "beschikbaarheid" you can edit the time but those bars are range bars that you can select from left and right and set the range and the middle number will increase or decrease depends on the range.
-17. By adding a new user you'll find as well the input field "variants" this need to be also an autofill multiple dropdown
 
+2. On group details you see a input field called "variants" that is an autofill dropdown, so you can't type but only add dropdown items to it. like a multiple dropdown html
+== fixed
+
+3. At lesson detail you'll find at the top of the edit section 2 statics, but the space between them aren't the same as in the design.
+== fixed
+
+4. Also at lesson detail i can't edit: "voorkeur docent" two input fields. those fields are the same at group details like: "variants", just an autofill dropdown with multiple options to add.
+== fixed
+
+5. By add new lesson you'll find again the "variants" input field, this input field need to be an autofill multiple option field.
+== fixed
+
+6. At license detail page when you edit, the fields about "toevoegen" with a V mark before it need to change into a checkfield when you click on the edit button.
+== fixed
+
+7. At location detail page on the right side you have created two buttons called: "lokalen" and "Nieuw locatie", the word "lokalen" need to be just a title and the "Nieuw locatie" need to be a button to open a new location popup.
+== Fixed
+
+8. At adding a new lokaal There is missing a line between last input field "capiciteiten" and begin title "toegankelijkheid". Please look carefully at the design of adding a new lokaal. Also here you'll find variants inputfield, this need to be the same like i described ealier.
+== fixed
+
+9. At all the login pages with the blue gradiant behind it I miss the correct button color.
+== fixed
+
+10. At manager dashboard, fix the same search on right top, like at point 1.
+== fixed
+
+11. At the settings pages you'll find by admin the button "Log uit" and by manager you'll find it as well like the button "create display link" those buttons does have a shadow behind it, in the design there is no shadow, so please follow the design rules.
+== fixed
+
+12. When I click on "reset authenticator" i miss the popup at the manager settings page.
+== Fixed
+
+13. At the settings page "settings-manager.html" When I click on "activeren" an pop-up opens with a dropdown (this need to be file-upload) and a box (this need to be a checkbox)
+== fixed
+
+14.At user details you'll find as well the option "variants" this need to be as well just an autofill dropdown with multiple options.
+== fixed
+
+15. When I click on the pencil at user detail page, the "beschikbaarheid" section with also a pencil, will open as well, that is not possible, you need to open and save them separately.
+== Fixed
+
+16. On page user details at section "beschikbaarheid" you can edit the time but those bars are range bars that you can select from left and right and set the range and the middle number will increase or decrease depends on the range.
+== 
+
+17. By adding a new user you'll find as well the input field "variants" this need to be also an autofill multiple dropdown
+== fixed
 
 
 

@@ -47,6 +47,21 @@
 
   }
 
+
+//   tag Edit
+
+EditSaveVoorkeur()
+function EditSaveVoorkeur() {
+    if (document.querySelectorAll('.tgEdtBtn').length > 0) { 
+        let EditBtns = document.querySelectorAll('.tgEdtBtn')
+        EditBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.classList.toggle('offMode') 
+            })
+        });
+    }
+}
+
   // show success popup
   SuccessPopup()
   function SuccessPopup() {

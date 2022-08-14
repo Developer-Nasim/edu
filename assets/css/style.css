@@ -122,6 +122,7 @@ li {
 .themebtn2 {
   background: #EDF3F5;
   color: #005395 !important; 
+  box-shadow: none !important;
 }
 
 .themebtn2:hover {
@@ -172,7 +173,9 @@ input.multiselect-dropdown-search.form-control {
 .mr-15 {
   margin-right: 15px;
 }
-
+.pd-0{
+  padding: 0 !important;
+}
 
  
 /* default-css END 
@@ -985,8 +988,23 @@ form#header_searchform input#header-search-bar::placeholder{
 
 
 
-
-
+.lithWithLine {
+  font-weight: 500 !important;
+  letter-spacing: 0.2px; 
+  position: relative;
+}
+.lithWithLine:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  bottom: 7px;
+  left: 0;
+  background: #005395;
+}
+label.the_Switch {
+  margin-top: 5px;
+}
 .headerWithActions {
   display: flex;
   align-items: center;
@@ -1482,13 +1500,25 @@ body.editmode .lktRt{
   opacity: .4;
   pointer-events: none;
 }
-body.editmode form.lktAFrm button.goToEdit.eddt {
+
+
+
+/* body.editmode form.lktAFrm button.goToEdit.eddt {
   display: none;
 }
 
 body.editmode form.lktAFrm button.goToEdit.themebtn {
   display: block !important;
+} */
+
+form.lktAFrm:not(.notEditing) button.goToEdit.eddt{
+  display: none;
 }
+form.lktAFrm:not(.notEditing) button.goToEdit.themebtn{
+  display: block !important;
+}
+
+
 label.capacityLabel img {
   margin-top: 5px;
   max-width: 150px;
@@ -1782,10 +1812,19 @@ ul.timingHere li label div {
 
 .adminCountsLeft.onlyTwoClmn .adcBlk {
   margin-right: 80px;
+} 
+.tgList.offMode .multiselect-dropdown {
+  pointer-events: none;
+  opacity: .8;
 }
 
-
-
+.tgList .themebtn{
+  display: none !important;
+}
+.tgList.offMode .closeNowTg,
+.tgList:not(.offMode) .saveNowTg{
+  display: block !important;
+} 
 
 /* Lessons  page css END && Settings Manager PAGE css STARTED */
 
@@ -2162,8 +2201,7 @@ form.lktAFrm .lncFtcr p > b,
 }
 
 .lncFtcr li.avileable:after {
-  background: #005395;
-/* Dark blue */
+  background: #005395; 
   border: 1px solid #005395;
   color: #005395;
 }
@@ -2210,6 +2248,69 @@ form.lktAFrm .lncFtcr p > b,
 }
 .lcntDtl .the_Switch input[type=checkbox]:checked::after {
   content: "Actief"; 
+}
+label.ckb {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 25px;
+}
+
+label.ckb input[type="checkbox"] {
+  display: none;
+}
+
+label.ckb span {
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 1px solid #d4d4d4;
+  display: block;
+  border-radius: 3px;
+}  
+
+ 
+label.ckb span:after {
+  content: "x";
+  position: absolute;
+  font-size: 12px;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  top: 64%;
+  left: -2px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: cursive;
+  padding-bottom: 5px;
+  color: #D4E0EC;
+  border: none; 
+}
+label.ckb input[type="checkbox"]:checked+span:after{
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  top: 42%;
+  left: 5px;
+  border-bottom: 2px solid #005395;
+  border-right: 2px solid #005395;
+  transform: translateY(-50%) rotate(40deg);
+  z-index: 2;
+  border-radius: 0;
+}
+form.lktAFrm.notEditing .lncFtcr span {
+  border: none;
+}
+
+form.lktAFrm.notEditing .lncFtcr label {
+  pointer-events: none;
+  margin-bottom: 5px;
 }
 
 
