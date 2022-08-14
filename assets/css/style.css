@@ -1705,41 +1705,90 @@ ul.timingHere li {
 
 ul.timingHere li > span {
   letter-spacing: 0.3px;
-
-/* Black */
+  margin-right: 20px; 
   color: #111111;
   width: 30px;
 }
-
-ul.timingHere li label {
+form.lktAFrm.notEditing div#time-range {
+  pointer-events: none;
+}
+#time-range {
+  width: 100%;
   position: relative;
   z-index: 2;
+}
+ .ui-slider-horizontal {
+    width: 100% !important;
+    height: 44px;
+    background: #f9f9fb80;
+    border-radius: 4px;
+    clear: both;
+    margin: 8px 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border: none;
+}
+#time-range .timeShowHere {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    color: #4E4C59;
+}
+.ui-state-default:hover {
+    background: inherit;
+    color: inherit;
+}
+.ui-slider {
+    position: relative;
+    text-align: left;
+}
+.ui-slider-horizontal .ui-slider-range {
+    top: -1px;
+    height: 100%;
+}
+.ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    font-size: 0;
+    display: block;
+    border: none;
+    box-shadow: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    background: #EDF3F5;
+    border-radius: 4px;
+}
+.ui-slider .ui-slider-handle { 
+    opacity: 0;
+}
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 100%;
+    cursor: default;
+    border: none;
+    cursor: pointer;
+} 
+.ui-slider-horizontal .ui-slider-handle {
+    top: 0;
+    margin-left: 0;
+}
+.ui-slider a:focus {
+    outline:none;
+}
+
+#slider-range {
   width: 100%;
-  margin: 0;
-  margin-left: 20px;
-  background: rgba(249, 249, 251, 0.5);
-  border-radius: 4px;
-  overflow: hidden;
-  box-sizing: border-box;
+  margin: 0 auto;
 }
-
-ul.timingHere li label input {
-  text-align: center;
-  background: none;
-}
-
-ul.timingHere li label div {
-  display: block;
-  width: 77%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #EDF3F5;
-  border-radius: 4px;
-  z-index: -1;
-}
-
+ 
 
 
 

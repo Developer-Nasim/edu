@@ -44,7 +44,7 @@
 == Fixed
 
 16. On page user details at section "beschikbaarheid" you can edit the time but those bars are range bars that you can select from left and right and set the range and the middle number will increase or decrease depends on the range.
-== 
+== fixed
 
 17. By adding a new user you'll find as well the input field "variants" this need to be also an autofill multiple dropdown
 == fixed
