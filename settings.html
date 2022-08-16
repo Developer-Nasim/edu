@@ -140,8 +140,7 @@
                                             <path d="M14 14L11.1 11.1" stroke="#005395" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </button> 
-                                    </div>
-                                    <span style="display:block;text-align:right;margin-top:5px">177 resultaten</span>
+                                    </div> 
                                 </form>
                                 <div class="tbl">
                                     <table>
@@ -149,7 +148,7 @@
                                             <tr>
                                                 <th>Naam</th>
                                                 <th></th> 
-                                                <th></th>
+                                                <th class="text-end">177 resultaten</th>
                                             </tr>
                                         </thead>
                                         <tbody> 
@@ -277,11 +276,11 @@
         </div> 
         <div class="modal fade" id="DataMdl" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="DataMdlLabel" aria-hidden="true">
             <div class="modal-dialog" style="max-width: 600px">
-                <div class="modal-content">
-                    <button type="button" class="close-this-popup" data-bs-dismiss="modal" aria-label="Close">sluiten <img src="assets/img/icons/close.svg" alt=""></button>
+                <div class="modal-content"> 
                     <div class="modal-body pd-0">  
                         <form action="#" class="withFrm multiFuncStepHere"> 
                             <div class="dfltStep"> 
+                                <button type="button" class="close-this-popup" data-bs-dismiss="modal" aria-label="Close">sluiten <img src="assets/img/icons/close.svg" alt=""></button>
                                 <h2>Administrator</h2>
                                 <p>Bewerk de informatie of stel een reset van de Google Authenticator in.</p>  
                                 <div class="row"> 
@@ -311,7 +310,7 @@
                                 <div class="textOnlyPopup step2">
                                     <p>Weet je zeker dat je de gebruikers inlog wilt resetten? De gebruiker krijgt een email om het account te heractiveren via Google Authenticator.</p>
                                     <button class="themebtn themebtn2 connectStep2" type="button">Gebruikers inlog resetten</button>
-                                    <button class="themebtn" type="button">Annuleren</button>
+                                    <button class="themebtn" type="button" data-bs-dismiss="modal" aria-label="Close">Annuleren</button>
                                 </div>
                                 <div class="step2">
                                     <div class="successPopup">
@@ -319,7 +318,7 @@
                                         <div class="scppErp">
                                             <h2>Yay, gelukt!</h2>
                                             <p>De locatie is succesvol aangemaakt.</p>
-                                            <button class="themebtn" type="button">Sluiten</button> 
+                                            <button class="themebtn" type="button" data-bs-dismiss="modal" aria-label="Close">Sluiten</button> 
                                         </div>
                                     </div>
                                 </div> 
@@ -329,7 +328,7 @@
                                 <div class="textOnlyPopup step3">
                                     <p>Weet je zeker dat je de administrator <b>[name lastname]</b> wilt verwijderen?</p>
                                     <button class="themebtn themebtn2 connectStep3" type="button">Administrator verwijderen</button>
-                                    <button class="themebtn" type="button">Annuleren</button>
+                                    <button class="themebtn" type="button" data-bs-dismiss="modal" aria-label="Close">Annuleren</button>
                                 </div>
                                 <div class="step3">
                                     <div class="successPopup">
@@ -337,7 +336,7 @@
                                         <div class="scppErp">
                                             <h2>Het is gelukt!</h2>
                                             <p>De gebruiker is succcesvol verijwiderd</p>
-                                            <button class="themebtn" type="button">Sluiten</button> 
+                                            <button class="themebtn" type="button" data-bs-dismiss="modal" aria-label="Close">Sluiten</button> 
                                         </div>
                                     </div>
                                 </div> 

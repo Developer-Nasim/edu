@@ -434,7 +434,11 @@ form#header_searchform{
 
 /* administrator 1st page css START */
 
-
+.dasboard-area{
+  position: relative;
+  min-height: 100vh;
+  z-index: 2;
+}
 .dasboard-area.adm1 {
   display: flex;
   justify-content: space-between;
@@ -2485,7 +2489,290 @@ input:invalid {
 .invalid-feedback{
   font-size: 14px;
 }
-/* Auths page css END && Settings Manager PAGE css STARTED */
-/* Lessons  page css END && Settings Manager PAGE css STARTED */
-/* Lessons  page css END && Settings Manager PAGE css STARTED */
-/* Lessons  page css END && Settings Manager PAGE css STARTED */
+
+
+
+
+
+
+/* Auths page css END && Dash-Employee PAGE css STARTED */
+
+
+
+
+.mngrRqBlk {
+  background: linear-gradient(224.93deg, #005395 16.06%, #003B6A 57.05%, #003A68 83.98%);
+  box-shadow: 2px 2px 5px rgba(163, 163, 169, 0.1);
+  border-radius: 8px;
+  padding: 24px 32px;
+  margin-bottom: 16px;
+}
+
+.mngrRqBlk p {
+  font-weight: 400 !important;
+  line-height: 24px !important; 
+  letter-spacing: 0.3px; 
+  color: #F9F9FB !important;
+}
+
+.mngrRqBlk-btns {
+  display: flex;
+  align-items: center;
+}
+
+.mngrRqBlk-btns button {
+  padding: 16px 32px;
+  width: 166px;
+  height: 51px;
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.6) 26.94%, rgba(255, 255, 255, 0.4) 76.59%);
+  backdrop-filter: blur(20px); 
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #FFFFFF;
+  margin-right: 40px;
+}
+
+.mngrRqBlk-btns a {
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid #fff;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+
+ 
+
+/* Dash-Employee page css END && 404 PAGE css STARTED */
+
+
+
+.erro-wrp h1 {
+  font-size: 224px;
+  line-height: 220px; 
+  letter-spacing: 2px; 
+  background: linear-gradient(224.93deg, #005395 16.06%, #003B6A 57.05%, #003A68 83.98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.erro-wrp p {
+  font-size: 20px;
+  line-height: 40px; 
+  color: #005395;
+}
+
+.errBtns {
+  display: flex;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.errBtns button.themebtn {
+  margin-right: 64px;
+}
+
+.errBtns a {
+  letter-spacing: 0.2px; 
+  color: #005395;
+  border-bottom: 1px solid #005395;
+}
+img.errorShape {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  z-index: -1;
+}
+
+.erro-wrp {
+  padding-top: 100px;
+}
+
+
+
+
+
+/* Error page css END && DisplayLink PAGE css STARTED */
+
+
+
+
+
+.ds-blk {
+  background: #F9F9FB;
+  box-shadow: 0.802792px 1.60558px 8.02792px rgba(151, 151, 151, 0.25);
+  border-radius: 1.60558px;
+}
+
+.ds-blk .topDpTp {
+  display: flex;
+  width: 100%;
+}
+
+.topDpTp-left {
+  width: 70%;
+  height: 223.18px; 
+  margin-right: 3px;
+}
+
+.ds-blk .topDpTp span {
+  padding: 3.21117px 12.8447px;
+  background: #D4E0EC;
+  border-radius: 1.60558px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 8.02792px;
+  line-height: 16px; 
+  color: #005395;
+}
+
+.topDpTp-right-one {
+  height: 41.75px;
+  margin-bottom: 3px;
+}
+
+.topDpTp-right-two {
+  display: block;
+  width: 100%;
+  height: 180px;
+}
+
+.topDpTp-right {
+  width: 30%;
+  height: 223.18px;
+  display: block;
+  overflow: hidden;
+}
+
+.btmDpTp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 7px 16px;
+  padding-left: 36px;
+}
+
+.btmDpTp span.status {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #FF2222;
+  border-radius: 50%;
+}
+.btmDpTp .actBtns {
+  display: flex;
+  align-items: center;
+}
+
+.btmDpTp .actBtns button.themebtn.themebtn2 {
+  padding: 14px 15px;
+  margin-right: 20px;
+}
+
+.btmDpTp .actBtns button.trashnow {
+  padding: 0;
+  border: none;
+  margin: 0;
+  background: none;
+}
+.btmDpTp .actBtns button.trashnow svg path {
+  stroke: #FF2222;
+}
+.btmDpTp span.status.succed {
+  background: #50C24E;
+}
+p.widgets {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #005395;
+}
+
+
+
+
+
+
+/* DisplayLInk page css END && createNewLink PAGE css STARTED */
+
+
+
+
+
+ul.dropHere {
+  width: 100%;
+  height: 564px; 
+  background-image: url(../img/lines.png);
+  background-repeat: repeat;
+  background-color: #F9F9FB;
+  box-shadow: 2px 4px 20px rgba(151, 151, 151, 0.25);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: baseline;
+}
+ul.widgets_item {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+}
+
+.draggable-item {
+  padding: 8px 32px;
+  width: 100%;
+  height: 80px; 
+  background: #005395;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px; 
+  color: #F9F9FB;
+  cursor: grab;
+}
+
+li.draggable-item.ui-sortable-helper {
+  background: #BBCFE1;
+  cursor: grabbing;
+  box-shadow: 2px 4px 20px rgba(151, 151, 151, 0.5);
+  -webkit-box-shadow: 2px 4px 20px rgba(151, 151, 151, 0.5);
+  -moz-box-shadow: 2px 4px 20px rgba(151, 151, 151, 0.5);
+  box-shadow: 2px 4px 20px rgba(151, 151, 151, 0.5);
+  transform: scale(1.015);
+  z-index: 100;
+} 
+ul.dropHere li.draggable-item {
+  width: 330px;
+  margin-bottom: 10px;
+}
+
+/* createNewLink page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+/* Lessons page css END && Settings PAGE css STARTED */
+
+

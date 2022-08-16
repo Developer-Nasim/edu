@@ -264,9 +264,7 @@
                             </div>
                         </div>
                         <div class="col-xl-7">
-                            <div class="lktRt"> 
-                        
-                                
+                            <div class="lktRt">  
                                 <nav>
                                     <div class="nav" id="nav-tab" role="tablist">
                                         <button class="nav-link active" id="nav-Locaties-tab" data-bs-toggle="tab" data-bs-target="#nav-Locaties" type="button" role="tab" aria-controls="nav-Locaties" aria-selected="true">Locaties</button>
@@ -287,7 +285,6 @@
                                                     </svg>
                                                 </button> 
                                             </div>
-                                            <span style="display:block;text-align:right;margin-top:5px">177 resultaten</span>
                                         </form>
                                         <div class="tbl">
                                             <table>
@@ -297,6 +294,7 @@
                                                         <th>Plekken</th>
                                                         <th>Status</th> 
                                                         <th></th>
+                                                        <th class="text-end">177 resultaten</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody> 
@@ -537,15 +535,14 @@
                                                         <path d="M14 14L11.1 11.1" stroke="#005395" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
                                                     </button> 
-                                                </div>
-                                                <span style="display:block;text-align:right;margin-top:5px">177 resultaten</span>
+                                                </div> 
                                             </form>
                                             <div class="tbl">
                                                 <table>
                                                     <thead>
                                                         <tr>
                                                             <th>Nummer</th> 
-                                                            <th></th>
+                                                            <th class="text-end">177 resultaten</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody> 
@@ -664,15 +661,14 @@
         <!--  -->
         <div class="modal fade" id="OrgPP" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="OrgPPLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content"> 
-                    <button type="button" class="close-this-popup" data-bs-dismiss="modal" aria-label="Close">sluiten <img src="assets/img/icons/close.svg" alt=""></button>
+                <div class="modal-content">  
                     <div class="modal-body">  
                         <form action="#">  
                             <div class="mt-4 Rm1stActive">  
                                 <div class="textOnlyPopup mt-4">
                                     <p>Weet je zeker dat je de gebruikers inlog wilt resetten? De gebruiker krijgt een email om het account te heractiveren via Google Authenticator.</p>
                                     <button class="themebtn themebtn2 showSuccess" type="button">Gebruikers inlog resetten</button>
-                                    <button class="themebtn" type="button">Annuleren</button>
+                                    <button class="themebtn" type="button" data-bs-dismiss="modal" aria-label="Close">Annuleren</button>
                                 </div> 
                             </div>
                         </form> 
