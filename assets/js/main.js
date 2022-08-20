@@ -489,6 +489,56 @@
     TheTimeRange()
 
 
+    window.addEventListener('mousemove', (e) => {
+        if (document.querySelectorAll('.a_bar').length > 0) { 
+            let bar = document.querySelector('.a_bar')
+            if (200 > e.pageY) {
+                bar.classList.add('show')
+            }else{
+                bar.classList.remove('show')
+            }
+        }
+    })
+    
+    $( ".droppable-area1, .droppable-area2" ).sortable({
+        connectWith: ".connected-sortable",
+        stack: '.connected-sortable ul'
+        }).disableSelection();
+
+
+    
+    
+    ShowPopupHash()
+    function ShowPopupHash() { 
+        if (window.location.hash && window.location.hash === "#success" || window.location.hash === "#failed") {
+            if (document.querySelectorAll('.showWithHash').length > 0) {
+                let theURL = window.location.href;
+                let theURLHash = window.location.hash;
+                let showPopup = document.querySelector('.showWithHash')
+                if (window.location.hash === "#success") {
+                    showPopup.classList.add('show_success')
+                }else if(window.location.hash === "#failed"){
+                    showPopup.classList.add('show_failed')
+                }
+                let ThePopupClose = document.querySelectorAll('.closeThisPopup')
+                ThePopupClose.forEach(cls => {
+                    cls.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (window.location.hash === "#success") {
+                            showPopup.classList.remove('show_success')
+                            window.location.assign(theURL.replace("#success","")); 
+                        }else if(window.location.hash === "#failed"){
+                            showPopup.classList.remove('show_failed')
+                            window.location.assign(theURL.replace("#failed","")); 
+                        }
+                    })
+                })
+
+            }
+        } 
+    }
+
+
 
   // StepForm 
   let closeNow = document.querySelectorAll('.ResetPopup');

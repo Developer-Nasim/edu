@@ -716,7 +716,38 @@ a.clearAllNtf {
 
 
 
+.a_bar {
+  margin-top: -64px;
+  position: relative;
+  height: 64px; 
+  background: #003A68;
+  color: #fff;
+  transition: .3s;
+}
+.a_bar.show{
+  margin-top: 0px;
+}
+.a_bar-wrp{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.a_bar p {
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px; 
+  color: #F9F9FB;
+  margin: 0;
+}
 
+.a_bar a {
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px;
+  text-decoration-line: underline; 
+  color: #F9F9FB;
+}
 
 .deze-week p, .adminCounts.stskn p {
   font-weight: 700;
@@ -2766,7 +2797,53 @@ ul.dropHere li.draggable-item {
   margin-bottom: 10px;
 }
 
-/* createNewLink page css END && Settings PAGE css STARTED */
+
+
+
+
+/* createNewLink page css END && HASh Popp css STARTED */
+
+
+.showWithHash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: max-content;
+  background: #00000094;
+  height: 100vh;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+.showWithHash.show_success,
+.showWithHash.show_failed{
+  opacity: 1;
+  visibility: visible; 
+}
+.showWithHash .successPopup {
+  background: #fff;
+  padding: 20px 35px;
+  border-radius: 10px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+} 
+.showWithHash.show_success .successPP,
+.showWithHash.show_failed .failedPP{
+  opacity: 1;
+  visibility: visible; 
+  display: block;
+}
+
+
+
+
 /* Lessons page css END && Settings PAGE css STARTED */
 /* Lessons page css END && Settings PAGE css STARTED */
 /* Lessons page css END && Settings PAGE css STARTED */
