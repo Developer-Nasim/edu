@@ -1,54 +1,72 @@
 (function($) {
   "use strict";
 
-  // calender
-  if(document.querySelector('#datepicker')){ 
-    $( "#datepicker" ).datepicker({ firstDay: 1});
-  }
+    // calender
+    if(document.querySelector('#datepicker')){ 
+        $( "#datepicker" ).datepicker({ firstDay: 1});
+    }
 
 
- // Show Notifications
- $('.showNotifs').click( function (){ 
-    $('.dashRight-wrps').toggleClass('show');   
-  }); 
+    // Show Notifications
+    $('.showNotifs').click( function (){ 
+        $('.dashRight-wrps').toggleClass('show');   
+    }); 
 
 
-  // Top Search suggest tags
-  AutoSuggestionSearch()
-  function AutoSuggestionSearch() {
-        
-        let allInputs = document.querySelectorAll("input[name=tags]");
-        allInputs.forEach(Inp => {
-            new Tagify(Inp, {
-                whitelist: [    
-                    "Joeke Hog",
-                    "Joep Lima",
-                    "Joep Siquior",
-                    "ACL2", 
-                    "ACT-III",
-                    "Action!", 
-                    "Ada", 
-                ],
-                blacklist: ["fuck", "shit"]
+    // Top Search suggest tags
+    AutoSuggestionSearch()
+    function AutoSuggestionSearch() {
+            
+            let allInputs = document.querySelectorAll("input[name=tags]");
+            allInputs.forEach(Inp => {
+                new Tagify(Inp, {
+                    whitelist: [    
+                        "Joeke Hog",
+                        "Joep Lima",
+                        "Joep Siquior",
+                        "ACL2", 
+                        "ACT-III",
+                        "Action!", 
+                        "Ada", 
+                    ],
+                    blacklist: ["fuck", "shit"]
+                });
+            }) 
+
+        let searchBtn = document.querySelectorAll('.searchIconItIs')
+
+        if (searchBtn.length > 0) {
+            searchBtn.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    let searchBlk = e.target.parentElement;
+                    searchBlk.classList.toggle('show')
+                    
+                })
             });
-        }) 
+        }
 
-      let searchBtn = document.querySelectorAll('.searchIconItIs')
+    }
 
-      if (searchBtn.length > 0) {
-          searchBtn.forEach(btn => {
-              btn.addEventListener('click', (e) => {
-                  let searchBlk = e.target.parentElement;
-                  searchBlk.classList.toggle('show')
-                  
-              })
-          });
-      }
+    // show popup if match url
+    function ShowPopup() {
+        let modals = document.querySelectorAll('.modal')
+        modals.forEach(list => {
+            let inStr = window.location.hash
+            if("#"+list.id+"" === inStr){ 
+                let modal = document.querySelectorAll(inStr) 
+                let obj = [];
+                for (let index = 0; index < modal.length; index++) {
+                    obj = modal[index];
+                    
+                }
+                $(obj).modal('show')
+                console.log(obj,$(modal))
+            }
+        })
+    }   
+    ShowPopup()
 
-  }
-
-
-//   tag Edit 
+    // tag Edit 
     EditSaveVoorkeur()
     function EditSaveVoorkeur() {
         if (document.querySelectorAll('.tgEdtBtn').length > 0) { 
@@ -61,16 +79,16 @@
         }
     }
 
-  // show success popup
-  SuccessPopup()
-  function SuccessPopup() {
-    if ($('.showSuccess').length > 0) {
-      $('.showSuccess').click((e) => {
-        const targetModalBody = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-        targetModalBody.classList.add('showSuccessnOW') 
-      })
+    // show success popup
+    SuccessPopup()
+    function SuccessPopup() {
+        if ($('.showSuccess').length > 0) {
+        $('.showSuccess').click((e) => {
+            const targetModalBody = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+            targetModalBody.classList.add('showSuccessnOW') 
+        })
+        }
     }
-  }
 
     // Capacity 
     CapacityChange()
@@ -85,35 +103,35 @@
         }
     }   
  
-  // Edit mode setup 
-  if ($('.goToEdit').length > 0) {
-    let EBTN = $('.goToEdit');
-//   https://codepen.io/caseymhunt/pen/ARgpxO
-    let AllEdBtns = document.querySelectorAll('.goToEdit');
-    // goToEdit
-    AllEdBtns.forEach(EdBtn => {
-        EdBtn.addEventListener('click', () => { 
-            if (EdBtn.parentElement.classList.contains('lktAFrm')) {
-                $('body').toggleClass('editmode')
-                let AddClasses = EdBtn.parentElement;
-                AddClasses.classList.toggle('notEditing')
-            }else if (EdBtn.parentElement.parentElement.classList.contains('lktAFrm')) {
-                $('body').toggleClass('editmode')
-                let AddClasses = EdBtn.parentElement.parentElement;
-                AddClasses.classList.toggle('notEditing')
-            } else if (EdBtn.parentElement.parentElement.parentElement.classList.contains('lktAFrm')) {
-                $('body').toggleClass('editmode')
-                let AddClasses = EdBtn.parentElement.parentElement.parentElement;
-                AddClasses.classList.toggle('notEditing')
-            } else if (EdBtn.parentElement.parentElement.parentElement.parentElement.classList.contains('lktAFrm')) {
-                $('body').toggleClass('editmode')
-                let AddClasses = EdBtn.parentElement.parentElement.parentElement.parentElement;
-                AddClasses.classList.toggle('notEditing')
-            }
+    // Edit mode setup 
+    if ($('.goToEdit').length > 0) {
+        let EBTN = $('.goToEdit'); 
+                                                                                                //   https://codepen.io/caseymhunt/pen/ARgpxO
+        let AllEdBtns = document.querySelectorAll('.goToEdit');
+        // goToEdit
+        AllEdBtns.forEach(EdBtn => {
+            EdBtn.addEventListener('click', () => { 
+                if (EdBtn.parentElement.classList.contains('lktAFrm')) {
+                    $('body').toggleClass('editmode')
+                    let AddClasses = EdBtn.parentElement;
+                    AddClasses.classList.toggle('notEditing')
+                }else if (EdBtn.parentElement.parentElement.classList.contains('lktAFrm')) {
+                    $('body').toggleClass('editmode')
+                    let AddClasses = EdBtn.parentElement.parentElement;
+                    AddClasses.classList.toggle('notEditing')
+                } else if (EdBtn.parentElement.parentElement.parentElement.classList.contains('lktAFrm')) {
+                    $('body').toggleClass('editmode')
+                    let AddClasses = EdBtn.parentElement.parentElement.parentElement;
+                    AddClasses.classList.toggle('notEditing')
+                } else if (EdBtn.parentElement.parentElement.parentElement.parentElement.classList.contains('lktAFrm')) {
+                    $('body').toggleClass('editmode')
+                    let AddClasses = EdBtn.parentElement.parentElement.parentElement.parentElement;
+                    AddClasses.classList.toggle('notEditing')
+                }
+            })
         })
-    })
- 
-  }
+    
+    }
 
     // Change input types in editing mode
     function ChangeInpTyps() {
@@ -152,28 +170,28 @@
     ChangeInpTyps()
 
 
-  function FormValidation() {
-    if (document.querySelectorAll('.needs-validation').length > 0) {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
+    function FormValidation() {
+        if (document.querySelectorAll('.needs-validation').length > 0) {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
 
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-              .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                  if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                  }
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    }
 
-                  form.classList.add('was-validated')
-              }, false)
-              })
+                    form.classList.add('was-validated')
+                }, false)
+                })
+        }
     }
-  }
-  FormValidation()
+    FormValidation()
 
-//   Show more or less
+    // Show more or less
     function ShowMoreLess() { 
         if (document.querySelectorAll('.showMoreLessNow').length > 0) {
             let ManagersBtn = document.querySelectorAll('.showMoreLessNow')
@@ -540,143 +558,143 @@
 
 
 
-  // StepForm 
-  let closeNow = document.querySelectorAll('.ResetPopup');
-  if (closeNow) { 
-      closeNow.forEach(btn => {
-          btn.addEventListener('click', () => {
-              ResetStepPopupAll()
-          })
-      })
-  }
-  function ResetStepPopupAll() {
-      let MainSteps = document.querySelector('.formSteps')
-      let AllDOts = document.querySelector('.stepDots') 
-      function StepReset() { 
-          if (MainSteps) { 
-              if (MainSteps.classList.contains('firstStep')) {
-                  MainSteps.classList.remove('firstStep')
-              }
-              if (MainSteps.classList.contains('LastStep')) {
-                  MainSteps.classList.remove('LastStep')
-              }
-              let allSteps = MainSteps.querySelectorAll('.step')
-              allSteps.forEach(AlStep => {
-                  AlStep.classList.remove('active')
-              });
-              allSteps[0].classList.add('active')
-              if (document.querySelectorAll('.stepDots').length > 0) {
-                let allDots = AllDOts.querySelectorAll('.dt')
-                allDots.forEach(Dt => {
-                    Dt.classList.remove('active')
-                });
-                allDots[0].classList.add('active') 
-              }
-          }
-      }
-      StepReset()
-      function SuccessPopup() {
-          let Modal = document.querySelector('.modal.showSuccessnOW')
-          if (Modal) {
-            Modal.classList.remove('showSuccessnOW')
-          }
-          if (document.querySelectorAll('.showSuccessnOW').length > 0) {
-            
-            document.querySelectorAll('.showSuccessnOW').forEach(el => {
-                el.classList.remove('showSuccessnOW')
+    // StepForm 
+    let closeNow = document.querySelectorAll('.ResetPopup');
+    if (closeNow) { 
+        closeNow.forEach(btn => {
+            btn.addEventListener('click', () => {
+                ResetStepPopupAll()
             })
-          }
-
-      }
-      SuccessPopup()
-  }
-  function StepForm() { 
-    if (document.querySelectorAll('.formSteps').length > 0) { 
-        let MainSteps = document.querySelector('.formSteps')
-        let AllDOts = document.querySelector('.stepDots')
-        let NextBtns = MainSteps.querySelectorAll('.nextStep') 
-        if (MainSteps.querySelectorAll('.nextStep') && MainSteps.querySelectorAll('.nextStep').length > 0) { 
-            NextBtns.forEach(NextBtn => { 
-                NextBtn.addEventListener('click', (e) => { 
-                    function StepChange() { 
-                        let AllSteps = MainSteps.querySelectorAll('.step');
-                        let StepActive = MainSteps.querySelector('.step.active');
-
-                        if (StepActive.nextElementSibling.classList.contains('endStep')) {
-                            MainSteps.classList.add('LastStep')
-                        }
-
-                        if (StepActive.nextElementSibling.classList.contains('step')) {
-                            StepActive.nextElementSibling.classList.add('active')
-                            StepActive.classList.remove('active') 
-                            MainSteps.classList.remove('firstStep')
-                        }else{
-                            AllSteps[0].classList.add('active')  
-                            MainSteps.classList.add('firstStep')
-                            MainSteps.classList.remove('LastStep')
-                        }
-                    }
-                    StepChange()
-                    function DotChange() { 
-                        if (document.querySelectorAll('.dt').length > 0) { 
-                            let AllSDotss = AllDOts.querySelectorAll('.dt');
-                            let DotActive = AllDOts.querySelector('.dt.active');
-                            
-                            if (DotActive.nextElementSibling && DotActive.nextElementSibling.classList.contains('dt')) {
-                                DotActive.nextElementSibling.classList.add('active')
-                                DotActive.classList.remove('active')
-                            }else{
-                                AllSDotss[0].classList.add('active')
-                                DotActive.classList.remove('active')
-                            }
-                        }
-                    }
-                    DotChange()
-                
-                })
-            })
-        }
-        if (MainSteps.querySelector('.prevNext') && MainSteps.querySelectorAll('.prevNext').length > 0) { 
-            let PrevBtns = MainSteps.querySelectorAll('.prevNext')
-            PrevBtns.forEach(PrevBtn => { 
-                PrevBtn.addEventListener('click', (e) => {
-                    function StepChange() { 
-                        let AllSteps = MainSteps.querySelectorAll('.step');
-                        let StepActive = MainSteps.querySelector('.step.active'); 
-                        if (StepActive.previousElementSibling.classList.contains('startStep')) {
-                            MainSteps.classList.add('firstStep')
-                            MainSteps.classList.remove('LastStep') 
-                        } 
-                        if (StepActive.previousElementSibling.classList.contains('step')) {
-                            StepActive.previousElementSibling.classList.add('active')
-                            StepActive.classList.remove('active')
-                        }else{
-                            AllSteps[0].classList.add('active') 
-                        }
-                    }
-                    StepChange()
-                    function DotChange() { 
-                        if (document.querySelectorAll('.dt').length > 0) { 
-                            let AllSDotss = AllDOts.querySelectorAll('.dt');
-                            let DotActive = AllDOts.querySelector('.dt.active');
-                            
-                            if (DotActive.previousElementSibling && DotActive.previousElementSibling.classList.contains('dt')) {
-                                DotActive.previousElementSibling.classList.add('active')
-                                DotActive.classList.remove('active')
-                            }else{
-                                AllSDotss[0].classList.add('active')
-                                DotActive.classList.remove('active')
-                            }
-                        }
-                    }
-                    DotChange()
-                
-                })
-            });
-        } 
+        })
     }
-  } 
-  StepForm()
+    function ResetStepPopupAll() {
+        let MainSteps = document.querySelector('.formSteps')
+        let AllDOts = document.querySelector('.stepDots') 
+        function StepReset() { 
+            if (MainSteps) { 
+                if (MainSteps.classList.contains('firstStep')) {
+                    MainSteps.classList.remove('firstStep')
+                }
+                if (MainSteps.classList.contains('LastStep')) {
+                    MainSteps.classList.remove('LastStep')
+                }
+                let allSteps = MainSteps.querySelectorAll('.step')
+                allSteps.forEach(AlStep => {
+                    AlStep.classList.remove('active')
+                });
+                allSteps[0].classList.add('active')
+                if (document.querySelectorAll('.stepDots').length > 0) {
+                    let allDots = AllDOts.querySelectorAll('.dt')
+                    allDots.forEach(Dt => {
+                        Dt.classList.remove('active')
+                    });
+                    allDots[0].classList.add('active') 
+                }
+            }
+        }
+        StepReset()
+        function SuccessPopup() {
+            let Modal = document.querySelector('.modal.showSuccessnOW')
+            if (Modal) {
+                Modal.classList.remove('showSuccessnOW')
+            }
+            if (document.querySelectorAll('.showSuccessnOW').length > 0) {
+                
+                document.querySelectorAll('.showSuccessnOW').forEach(el => {
+                    el.classList.remove('showSuccessnOW')
+                })
+            }
+
+        }
+        SuccessPopup()
+    }
+    function StepForm() { 
+        if (document.querySelectorAll('.formSteps').length > 0) { 
+            let MainSteps = document.querySelector('.formSteps')
+            let AllDOts = document.querySelector('.stepDots')
+            let NextBtns = MainSteps.querySelectorAll('.nextStep') 
+            if (MainSteps.querySelectorAll('.nextStep') && MainSteps.querySelectorAll('.nextStep').length > 0) { 
+                NextBtns.forEach(NextBtn => { 
+                    NextBtn.addEventListener('click', (e) => { 
+                        function StepChange() { 
+                            let AllSteps = MainSteps.querySelectorAll('.step');
+                            let StepActive = MainSteps.querySelector('.step.active');
+
+                            if (StepActive.nextElementSibling.classList.contains('endStep')) {
+                                MainSteps.classList.add('LastStep')
+                            }
+
+                            if (StepActive.nextElementSibling.classList.contains('step')) {
+                                StepActive.nextElementSibling.classList.add('active')
+                                StepActive.classList.remove('active') 
+                                MainSteps.classList.remove('firstStep')
+                            }else{
+                                AllSteps[0].classList.add('active')  
+                                MainSteps.classList.add('firstStep')
+                                MainSteps.classList.remove('LastStep')
+                            }
+                        }
+                        StepChange()
+                        function DotChange() { 
+                            if (document.querySelectorAll('.dt').length > 0) { 
+                                let AllSDotss = AllDOts.querySelectorAll('.dt');
+                                let DotActive = AllDOts.querySelector('.dt.active');
+                                
+                                if (DotActive.nextElementSibling && DotActive.nextElementSibling.classList.contains('dt')) {
+                                    DotActive.nextElementSibling.classList.add('active')
+                                    DotActive.classList.remove('active')
+                                }else{
+                                    AllSDotss[0].classList.add('active')
+                                    DotActive.classList.remove('active')
+                                }
+                            }
+                        }
+                        DotChange()
+                    
+                    })
+                })
+            }
+            if (MainSteps.querySelector('.prevNext') && MainSteps.querySelectorAll('.prevNext').length > 0) { 
+                let PrevBtns = MainSteps.querySelectorAll('.prevNext')
+                PrevBtns.forEach(PrevBtn => { 
+                    PrevBtn.addEventListener('click', (e) => {
+                        function StepChange() { 
+                            let AllSteps = MainSteps.querySelectorAll('.step');
+                            let StepActive = MainSteps.querySelector('.step.active'); 
+                            if (StepActive.previousElementSibling.classList.contains('startStep')) {
+                                MainSteps.classList.add('firstStep')
+                                MainSteps.classList.remove('LastStep') 
+                            } 
+                            if (StepActive.previousElementSibling.classList.contains('step')) {
+                                StepActive.previousElementSibling.classList.add('active')
+                                StepActive.classList.remove('active')
+                            }else{
+                                AllSteps[0].classList.add('active') 
+                            }
+                        }
+                        StepChange()
+                        function DotChange() { 
+                            if (document.querySelectorAll('.dt').length > 0) { 
+                                let AllSDotss = AllDOts.querySelectorAll('.dt');
+                                let DotActive = AllDOts.querySelector('.dt.active');
+                                
+                                if (DotActive.previousElementSibling && DotActive.previousElementSibling.classList.contains('dt')) {
+                                    DotActive.previousElementSibling.classList.add('active')
+                                    DotActive.classList.remove('active')
+                                }else{
+                                    AllSDotss[0].classList.add('active')
+                                    DotActive.classList.remove('active')
+                                }
+                            }
+                        }
+                        DotChange()
+                    
+                    })
+                });
+            } 
+        }
+    } 
+    StepForm()
 
 
     //   Multi Func Modal
