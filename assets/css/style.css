@@ -138,6 +138,8 @@ input.multiselect-dropdown-search.form-control {
   background: #edf3f5; 
 }
 
+
+
 /* Switch */
 .the_Switch input[type=checkbox]{
   width:60px;
@@ -2513,7 +2515,7 @@ form.auths_g_auth a {
   color: #005395;
   display: block;
 }
-input:invalid {
+input:invalid,.timeInvalid {
   border: 1px solid red;
   background: #ff00001f !important;
 }
@@ -2801,7 +2803,760 @@ ul.dropHere li.draggable-item {
 
 
 
-/* createNewLink page css END && HASh Popp css STARTED */
+/* createNewLink page css END && Schedule page css STARTED */
+
+.schDt {
+  display: flex;
+  align-items: center;
+}
+
+.schDt > button {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.schDt .nice-select.niceSelect {
+  border: none;
+  font-weight: 400;
+  font-size: 14px; 
+  letter-spacing: 0.2px;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+.schDt .nice-select:after {
+  display: none;
+}
+.schedule-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fileterWithtag {
+  display: flex;
+  align-items: center;
+}
+
+.fileterWithtag button.themebtn.themebtn2 ul li.active {
+  padding-left: 25px;
+}
+.fileterWithtag button.tgs {
+  background: #F9F9FB;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-left: 17px;
+  border: none;
+}
+.fileterWithtag button.themebtn.themebtn2 ul li:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: .3s;
+}
+.fileterWithtag button.themebtn.themebtn2 ul li.active:after {
+  opacity: 1;
+
+} 
+.fileterWithtag button.tgs:after {
+  content: "x";
+  text-transform: capitalize;
+  font-size: 20px;
+  margin-left: 8px;
+  font-weight: 500;
+  font-family: cursive;
+  color: #A3A3A9;
+}
+.fileterWithtag > button.themebtn.themebtn2 {
+  padding: 12px;
+  margin-left: 19px;
+}
+.schead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.schead h5 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase; 
+  color: #DA4167;
+}
+.title.wSts h2 {
+  display: flex;
+  align-items: center;
+}
+
+.title.wSts h2 span {
+  background: #50C24E;
+  border-radius: 4px;
+  padding: 2px 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #F9F9FB;
+  margin-left: 40px;
+}
+.schead h5 span {
+  font-size: 14px;
+  line-height: 32px; 
+  letter-spacing: 0.3px;
+  text-decoration-line: underline; 
+  color: #003A68;
+  font-weight: 500;
+  margin-left: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.scVrs {
+  display: flex;
+  align-items: center;
+}
+
+.scVrs span {
+  width: 26px;
+  height: 26px; 
+  background: linear-gradient(224.93deg, #005395 16.06%, #003B6A 57.05%, #003A68 83.98%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-transform: capitalize;
+  margin-left: 4px;
+}
+
+.scVrs button.clps {
+  padding: 0;
+  border: none;
+  background: none;
+  margin-left: 15px;
+}
+.fileterWithtag button.themebtn.themebtn2 {
+  position: relative;
+}
+
+.fileterWithtag button.themebtn.themebtn2 ul {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #da4167;
+  text-align: left;
+  width: 130px;
+  border-radius: 5px;
+  overflow: hidden;
+  color: #fff;
+  opacity: 0;
+  transition: .3s;
+  visibility: hidden;
+  z-index: 9;
+}
+
+.fileterWithtag button.themebtn.themebtn2 ul li {
+  display: block;
+  padding: 10px 10px;
+  width: 100%;
+  position: relative;
+  transition: .3s;
+}
+
+.fileterWithtag button.themebtn.themebtn2 ul li:hover {
+  background: #cb4062;
+}
+
+.fileterWithtag button.themebtn.themebtn2:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+.scVrs button.clps svg {
+  width: 24px;
+  height: 24px;
+  transform: rotate(180deg);
+  transition: .3s;
+  pointer-events: none;
+}
+.schedule-timeTble.showNow .scVrs button.clps svg {
+  transform: rotate(0deg);
+}
+.schedule-blk {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: baseline;
+}
+.schedule-timeTble{
+  background: #F9F9FB;
+  border-radius: 4px;
+  margin-right: 25px;
+  padding: 24px;
+  width: 100%;
+}
+.schedule_tble {
+  width: 100%;
+  margin-top: 20px;
+  display: none; 
+}
+.showNow .schedule_tble{
+  display: block;
+}
+.schedule_tble table{
+  width: 100%;
+}
+.schedule_tble table thead th {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px; 
+  color: #000000;
+  text-align: center;
+  margin-right: 24px;
+}
+
+.schedule_tble table tbody tr td p.timeBLk {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px; 
+  color: #000000;
+  margin-right: 20px;
+}
+
+.schedule_tble table tbody tr td p.timeBLk span {
+  display: block;
+}
+td {
+  position: relative;
+}
+/* td.hideForNow .schdBlk{
+  border: 1px solid red;
+} */
+td.contentOnThis:after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 83%;
+  background: #ebebeb;
+  top: 18px;
+  left: 0;
+  border-radius: 5px;
+  border: 2px dashed #c1c1c1;
+}
+
+.schdBlk {
+  cursor: pointer;
+  background: #9B6CB7;
+  border-radius: 4px;
+  display: block;
+  font-size: 12px;
+  line-height: 16px; 
+  text-align: center; 
+  color: #F9F9FB;
+  min-width: 150px;
+  width: 90%;
+  overflow: hidden;
+  margin-top: 16px;
+  margin-right: 24px;
+}
+.schedule_tble table tbody tr td:last-child .schdBlk {
+  margin-right: 0;
+}
+
+.schdBlk span {
+  display: block;
+  line-height: 18px;
+  padding: 5px 20px;
+  pointer-events: none;
+}
+
+.schdBlk b {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px; 
+  text-align: center;
+  letter-spacing: 0.3px; 
+  color: #F9F9FB;
+  padding: 5px 15px;
+  display: block;
+  pointer-events: none;
+}
+
+.schdBlk span:last-child {
+  background: #9B6CB7;
+  background-blend-mode: multiply;
+}
+.schdBlk.conflict {
+  background: #FF2222;
+}
+
+.schdBlk.conflict span:last-child {
+  background: #D31414;
+}
+.schdBlk.disabled {
+  position: relative;
+  background: #F0F0F2;
+  pointer-events: none;
+}
+
+.schdBlk.disabled span,.schdBlk.disabled b {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.schdBlk.disabled:after {
+  content: "This is an unavailable spot";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  z-index: 2;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 16px; 
+  text-align: center; 
+  color: #A3A3A9;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.schdBlk.disabled:before {
+  content: "Niet beschikbaar";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 2;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #A3A3A9;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.schedule-creator {
+  margin-top: 50px;
+  min-width: 320px;
+}
+.schedule-creator h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #005395;
+}
+
+.schedule-creator h4 span {
+  font-size: 14px;
+  line-height: 20px; 
+  text-align: right;
+  letter-spacing: 0.2px; 
+  color: #003A68;
+  font-weight: 400;
+}
+
+.schedule-creator form.searchList {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.schedule-creator form.searchList img {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  filter: grayscale(1);
+  opacity: .5;
+  pointer-events: none;
+}
+
+.schedule-creator ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 32px;
+  gap: 16px;
+  width: 315px;
+  height: 40px; 
+  margin-bottom: 8px;
+  background: #EDF3F5;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px; 
+  color: #003A68;
+}
+
+.schedule-creator ul li svg {
+  margin-right: 5px;
+}
+
+.schedule-creator button.themebtn {
+  background: #FF2222;
+  box-shadow: none;
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+.schedule-creator form.searchList input {
+  background: #F9F9FB;
+  border-radius: 4px;
+}
+.nice-select {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background: #EDF3F5;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: #4E4C59;
+}
+label .nice-select {
+  background: #EDF3F5;
+  border: none;
+}
+
+.nice-select ul.list {
+  width: 100%;
+}
+.timeBlk.disabled {
+  position: relative;
+  padding-top: 30px;
+}
+
+.timeBlk.disabled:after {
+  content: "Pauze";
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px; 
+  color: #A3A3A9;
+}
+
+.timeBlk.disabled > b,.timeBlk.disabled > div {
+  opacity: .6;
+}
+.lsnBtns {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.lsnBtns b {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.lsnBtns button:last-child {
+  margin-left: 15px;
+}
+
+.edtAct_btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+} 
+
+form.tijdsblokken label.withCheckBox input:checked+span {
+  background: #005395;
+}
+form.tijdsblokken label.withCheckBox input:checked+span::after{
+  border-color: #fff;
+}
+form.tijdsblokken .the_Switch input[type=checkbox]:after {
+  content: "Nieuw schema aanmaken";
+  position: absolute;
+  top: 0;
+  width: max-content;
+  left: 100%;
+  padding-left: 15px;
+  color: #000;
+}
+form.tijdsblokken .the_Switch input:checked[type=checkbox]:after {
+  content: "Nieuw x x.."; 
+}
+form.tijdsblokken label.the_Switch.showWhatYouNeed select,
+form.tijdsblokken label.the_Switch.showWhatYouNeed .nice-select.niceSelect,
+form.tijdsblokken .the_Switch input[type="text"]{
+  display: none;
+}
+form.tijdsblokken label.the_Switch.showWhatYouNeed input[type=text]{
+  display: block;
+}
+form.tijdsblokken.timings_mdl .nice-select.niceSelect {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+form.tijdsblokken.timings_mdl .nice-select.niceSelect > span.current{
+  color: #4E4C59;
+}
+ul.btmSSList {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+ul.btmSSList li {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 16px; 
+  color: #111111;
+  margin-right: 15px;
+  margin-top: 10px;
+  position: relative;
+}
+
+ul.btmSSList li > i {
+  margin-right: 5px;
+}
+
+ul.btmSSList li button {
+  padding: 2px 8px;
+  width: 37px;
+  height: 28px; 
+  background: #F9F9FB;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.3px; 
+  color: #111111;
+}
+
+.labelWithRightBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.labelWithRightBtn button {
+  padding: 2px 8px;
+  width: 120px;
+  height: 20px; 
+  background: #F9F9FB;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 16px; 
+  color: #111111;
+  border: none;
+}
+form.tijdsblokken .nice-select.niceSelect {
+  margin: 0;
+}
+
+form.tijdsblokken .nice-select.niceSelect > span.current {
+  color: #FF2222;
+}
+form.tijdsblokken label > p {
+  font-size: 14px;
+  line-height: 20px; 
+  letter-spacing: 0.2px; 
+  color: #FF2222;
+  margin: 0;
+}
+form.tijdsblokken > h2 span { 
+  font-weight: 900; 
+  font-size: 16px; 
+  line-height: 19px; 
+  text-transform: uppercase; 
+  color: #DA4167; 
+  margin-left: 15px; 
+}
+form.tijdsblokken .adminCounts.locatieA {
+  width: 100%;
+}
+
+form.tijdsblokken .adminCounts.locatieA .adminCountsLeft {
+  justify-content: space-between;
+  padding: 0;
+  padding-top: 19px;
+  align-items: baseline;
+}
+
+form.tijdsblokken .adminCounts.locatieA .adminCountsLeft > .adcBlk {
+  width: 33%;
+  padding: 0 10px;
+}
+
+form.tijdsblokken .adminCounts.locatieA .adminCountsLeft > .adcBlk span {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase; 
+  color: #4E4C59;
+  display: block;
+}
+form.tijdsblokken.Teachername .nice-select.niceSelect > span.current {
+  color: #111;
+}
+
+form.tijdsblokken.Teachername .nice-select.niceSelect {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.schDt .nice-select.niceSelect {
+  background: no-repeat;
+  border: none;
+  line-height: 48px;
+}
+ul.btmSSList li ul {
+  max-height: 200px;
+  overflow: auto;
+  position: absolute;
+  top: 25px;
+  background: #f7f7f7;
+  width: 150px;
+  border-radius: 2px;
+  box-shadow: 0px 5px 15px 5px #00000014;
+  right: -20px;
+  z-index: 9;
+  padding: 5px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+ul.btmSSList li ul li {
+  padding: 8px 15px;
+  margin: 0;
+}
+
+ul.btmSSList li ul:after {
+  content: "";
+  position: absolute;
+  border-right: 10px solid #f7f7f7;
+  border-bottom: 10px solid #f7f7f7;
+  top: 0;
+  right: 15%;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+ul.btmSSList li:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+.inpSrc {
+  position: relative;
+}
+
+.inpSrc i {
+  position: absolute;
+  right: 8px;
+  top: 18px;
+  font-size: 9px;
+  font-weight: 900;
+  opacity: .5;
+}
+
+.inpSrc ul {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9; 
+  box-shadow: 1px 1px 2px #DFDFDF;
+  border-radius: 2px;
+  max-height: 130px;
+  overflow: auto;
+  display: none;
+}
+.inpSrc ul.show{
+  display: block;
+}
+.inpSrc ul li {
+  padding: 14px;
+  display: none;
+  transition: .3s;
+}
+.inpSrc ul li.show{
+  display: block;
+}
+.inpSrc ul li b {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; 
+  letter-spacing: 0.3px;
+  color: #4A4A4A;
+  display: block;
+}
+
+.inpSrc ul li span.resourcesss {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px; 
+  display: flex;
+  align-items: center;
+  color: #4A4A4A;
+}
+
+.inpSrc ul li span.the_values {
+  display: none;
+}
+
+.inpSrc ul li:hover {
+  cursor: pointer;
+  background: #edf3f5;
+}
+.schTopIktRt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -15px;
+}
+
+.schTopIktRt > b {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px; 
+  color: #005395;
+  text-transform: capitalize;
+}
+
+.schTopIktRt > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px; 
+  letter-spacing: 0.2px;
+  color: #000000;
+}
+
+.schTopIktRt .nice-select.niceSelect {
+  line-height: 32px;
+  height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Schedule page css END && HASh Popp css STARTED */
 
 
 .showWithHash {
@@ -2840,7 +3595,44 @@ ul.dropHere li.draggable-item {
   visibility: visible; 
   display: block;
 }
+.timeBlk {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D4E0EC;
+}
 
+.timeBlk > b {
+  font-weight: 700;
+  line-height: 32px;
+  margin-right: 24px;
+}
+
+.timeBlk > div {
+  display: flex;
+  align-items: center;
+}
+
+.timeBlk > div > b {
+  display: block;
+  margin: 0 10px;
+}
+
+.timeBlk button {
+  padding: 0;
+  border: none;
+  background: none;
+  margin-left: 17px;
+  font-weight: 700;
+  color: #005395;
+}
+
+.timeBlk button img {
+  width: 25px;
+}
 
 
 

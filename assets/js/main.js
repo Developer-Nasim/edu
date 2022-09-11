@@ -11,7 +11,12 @@
     $('.showNotifs').click( function (){ 
         $('.dashRight-wrps').toggleClass('show');   
     }); 
+    // Show hide schedule
+    $('.scVrs button.clps').click( function (e){
+        e.target.parentElement.parentElement.parentElement.classList.toggle('showNow') 
+    }); 
 
+    $('.niceSelect').niceSelect();
 
     // Top Search suggest tags
     AutoSuggestionSearch()
@@ -47,24 +52,55 @@
 
     }
 
-    // show popup if match url
-    function ShowPopup() {
-        let modals = document.querySelectorAll('.modal')
-        modals.forEach(list => {
-            let inStr = window.location.hash
-            if("#"+list.id+"" === inStr){ 
-                let modal = document.querySelectorAll(inStr) 
-                let obj = [];
-                for (let index = 0; index < modal.length; index++) {
-                    obj = modal[index];
-                    
+    // Added value on the input 
+    function AddValueOFInput() { 
+        // Select the target node
+        if (document.querySelectorAll('.slider-time').length > 0) {
+            
+            var targeTime = document.querySelector('.slider-time')
+            var targeTime2 = document.querySelector('.slider-time2') 
+
+            $("body").on('DOMSubtreeModified', {targeTime,targeTime2}, function(e) {
+                if (6 > e.target.innerHTML.length ) {
+                    let selectInput = e.target.parentElement.querySelector('[type="hidden"]')
+                    if (e.target.classList.contains('slider-time')) {
+                        selectInput.value = e.target.innerHTML +" - "+ e.target.parentElement.querySelector('.slider-time2').innerHTML
+                    }else if(e.target.classList.contains('slider-time2')){
+                        selectInput.value = e.target.parentElement.querySelector('.slider-time').innerHTML +" - "+ e.target.innerHTML
+                    }
+
                 }
-                $(obj).modal('show')
-                console.log(obj,$(modal))
-            }
-        })
-    }   
-    ShowPopup()
+            });
+
+        }
+    }
+    AddValueOFInput()
+    
+    // SHow has url when open tag popup
+    function ShowPopupWithHashId() { 
+        if (document.querySelectorAll('.showHashInUrl').length > 0) {
+            let btn = document.querySelector('.showHashInUrl');
+            btn.addEventListener('click', (e) => {
+                let Hash = btn.dataset.hash; 
+                if (!window.location.href.includes(Hash)) {
+                    var newurl = window.location.href + Hash; 
+                    window.history.pushState({ path: newurl }, '', newurl);
+                }
+
+                let clsBtn = document.querySelector(`${btn.dataset.bsTarget} .close-this-popup`)
+                if (clsBtn) {
+                    clsBtn.addEventListener('click', ()=>{
+                        var newurl = window.location.href.replace(Hash,"") 
+                        window.history.pushState({ path: newurl }, '', newurl);
+                    })
+                }
+
+                
+
+            })
+        }
+    }
+    ShowPopupWithHashId()
 
     // tag Edit 
     EditSaveVoorkeur()
@@ -79,6 +115,32 @@
         }
     }
 
+    // Bootstrap ToolTip
+    function BootstrapToolTip() { 
+        if (document.querySelectorAll('[data-bs-toggle="tooltip"]').length > 0) { 
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        }
+    }
+    BootstrapToolTip()
+
+    //  Show hide input select in schedular page
+    function Show_HideInput_Select() { 
+        if (document.querySelectorAll('.showSelection_input').length > 0) { 
+            let selection_input = document.querySelectorAll('.showSelection_input')
+            selection_input.forEach(inp => {
+                inp.addEventListener('click', () => {
+                    inp.parentElement.classList.toggle('showWhatYouNeed')
+                })
+            })
+        }
+    }
+    Show_HideInput_Select()
+
+
+
     // show success popup
     SuccessPopup()
     function SuccessPopup() {
@@ -89,6 +151,134 @@
         })
         }
     }
+
+ 
+    // Edit schedule time table 
+    function ScheduleTimeTable() {     
+        function SetListNumbs() {
+            if (document.querySelectorAll('.theListsOfSchedule .nmb').length > 0) {
+                let inps = document.querySelectorAll('.theListsOfSchedule .nmb');
+                    console.log(inps.length)
+                for (let i = 0; i < inps.length; i++) { 
+                    inps[i].innerHTML = i+1
+                } 
+            }
+        }
+
+        function TimeTableedits() {
+            if (document.querySelectorAll('.timeBlk input[type="text"]').length > 0) {
+                let inps = document.querySelectorAll('.timeBlk input[type="text"]');
+                inps.forEach(inp => {
+                    inp.addEventListener('keyup', (e) => {
+                        let rgx = RegExp(/[a-z]/)
+                        let theValue = e.target.value.replace(rgx,"").replace(" ","").slice(0,5)
+                        e.target.value = theValue
+
+                        let hrs  = theValue.slice(0,2)
+                        let mnts = theValue.slice(3,5)
+                        
+                        if (hrs > 12 || mnts > 60) {
+                            if (!e.target.classList.contains("timeInvalid")) {
+                                e.target.classList.add("timeInvalid")
+                            }
+                        }else if(hrs == 12 && mnts > 0 || 0 > hrs && mnts > 0){
+                            if (!e.target.classList.contains("timeInvalid")) {
+                                e.target.classList.add("timeInvalid")
+                            }
+                        }else{
+                            if (e.target.classList.contains("timeInvalid")) {
+                                e.target.classList.remove("timeInvalid")
+                            }
+                        } 
+                    })
+                })
+            }
+            if (document.querySelectorAll('.timeBlk button').length > 0) {
+                let rmBtns = document.querySelectorAll('.timeBlk button');
+                rmBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        btn.parentElement.remove() 
+                    SetListNumbs()
+                    })
+                })
+            }
+        }
+        TimeTableedits()
+        if (document.querySelectorAll('.addLessionNow').length > 0) {
+            let AddLessionBtn = document.querySelector('.addLessionNow')
+            AddLessionBtn.addEventListener('click', (e) => {  
+                let putIn = document.querySelector('.tijdsblokken.timings_mdl .theListsOfSchedule') 
+                let makeDiv = document.createElement('LI')
+                makeDiv.innerHTML = `<div class="timeBlk">
+                            <b class="nmb">4</b>
+                            <div>
+                                <input type="text" value="09:00">
+                                <b>-</b>
+                                <input type="text" value="10:00">
+                            </div>
+                            <button type="button"><i class="far fa-trash"></i></button>
+                        </div>`
+                putIn.appendChild(makeDiv) 
+                TimeTableedits()
+                SetListNumbs()
+            })
+        }
+        if (document.querySelectorAll('.takeBreak').length > 0) {
+            let AddLessionBtn = document.querySelector('.takeBreak')
+            AddLessionBtn.addEventListener('click', (e) => {  
+                let putIn = document.querySelector('.tijdsblokken.timings_mdl .theListsOfSchedule') 
+                let makeDiv = document.createElement('LI')
+                makeDiv.innerHTML = `<div class="timeBlk disabled">
+                            <b class="nmb">4</b>
+                            <div>
+                                <input type="text" value="09:00">
+                                <b>-</b>
+                                <input type="text" value="10:00">
+                            </div>
+                            <button type="button"><i class="far fa-trash"></i></button>
+                        </div>`
+                putIn.appendChild(makeDiv) 
+                TimeTableedits()
+                SetListNumbs()
+            })
+        }
+        if (document.querySelectorAll('.inpSrc input').length > 0) {
+            let alInputs = document.querySelectorAll('.inpSrc input')
+            let keepList = [];
+            alInputs.forEach(inp => {
+                inp.addEventListener('keyup', (e) =>{
+
+                    let contents_list = inp.parentElement.querySelector('ul');
+                    let contents = inp.parentElement.querySelectorAll('ul li b');
+                    let tVl = e.target.value.toLocaleLowerCase();
+                    console.log(tVl)
+                    contents.forEach(bs => {
+                        if (tVl.length > 0 && bs.textContent.toLocaleLowerCase().match(tVl)) {
+                            bs.parentElement.classList.add('show')
+                            contents_list.classList.add('show')
+                        }else{
+                            bs.parentElement.classList.remove('show')
+                            contents_list.classList.remove('show')
+                        }
+                    });
+                })
+            })
+        }
+
+        if (document.querySelectorAll('.inpSrc').length > 0) {
+            let selectOpt = document.querySelectorAll('.inpSrc ul li')
+            selectOpt.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    let parentDiv = btn.parentElement.parentElement;
+                    parentDiv.querySelector('input').value = btn.querySelector('b').textContent;
+                    parentDiv.querySelector('ul').classList.toggle('show')
+
+                })
+            })
+        }
+    }
+    ScheduleTimeTable()
+
 
     // Capacity 
     CapacityChange()
@@ -106,7 +296,7 @@
     // Edit mode setup 
     if ($('.goToEdit').length > 0) {
         let EBTN = $('.goToEdit'); 
-                                                                                                //   https://codepen.io/caseymhunt/pen/ARgpxO
+        //   https://codepen.io/caseymhunt/pen/ARgpxO
         let AllEdBtns = document.querySelectorAll('.goToEdit');
         // goToEdit
         AllEdBtns.forEach(EdBtn => {
@@ -132,6 +322,64 @@
         })
     
     }
+
+    // Custom filter menus
+    function TheFilterDropdown() {
+        if (document.querySelectorAll('.wDRP').length > 0) {
+            let pDiv = document.querySelector('.wDRP').parentElement
+            let MDiv = document.querySelector('.wDRP')
+            let InPhidden = MDiv.querySelector('input[type="hidden"]')
+            let MainFLists= pDiv.querySelector('.snTgs')
+            let FLists = MDiv.querySelectorAll('ul li')
+            FLists.forEach(list => {
+                list.addEventListener('click', (e) => {
+                    MainFLists.innerHTML = ""
+                    InPhidden.value = ""
+                    let target = e.target
+                    target.classList.toggle('active')
+                    let ActiveFLists = MDiv.querySelectorAll('ul li.active')
+                    let keep = [];
+                    ActiveFLists.forEach(list => {
+                        keep.push(list.textContent)
+                    }); 
+                    InPhidden.value = keep
+                    keep.forEach(btN => {
+                        let Btn = document.createElement("BUTTON")
+                        Btn.setAttribute('type',"button")
+                        Btn.classList.add('tgs')
+                        Btn.innerHTML = `${btN}`
+                        MainFLists.append(Btn)
+                    }) 
+                    
+                    RemoveTgs()
+                })
+            })
+
+            function RemoveTgs() { 
+                if (pDiv.querySelectorAll('.snTgs button').length > 0) { 
+                    let MainFList_s= pDiv.querySelectorAll('.snTgs button')
+                    let FLst = MDiv.querySelectorAll('ul li.active')
+                    MainFList_s.forEach(Fbtn => {
+                        Fbtn.addEventListener('click', (e) => {
+                            let input = Fbtn.parentElement.parentElement.querySelector('input[type="hidden"]') 
+                            let store = []
+                            FLst.forEach(mtc => {
+                                if (Fbtn.textContent == mtc.textContent) {
+                                    mtc.classList.remove('active')
+                                }else{
+                                    store.push(mtc.textContent)
+                                }
+                            })
+                            input.value = store 
+                            Fbtn.remove()
+                        })
+                    })
+                }
+            }
+
+        }
+    }
+    TheFilterDropdown()
 
     // Change input types in editing mode
     function ChangeInpTyps() {

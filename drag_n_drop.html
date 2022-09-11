@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Site Title Here</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <style>
+        .whiteBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background: rebeccapurple;
+        }
+
+        .imgBox {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="whiteBox">
+        <div class="imgBox" draggable="true">
+            drag me
+        </div>
+    </div>
+    <div class="whiteBox"></div>
+    <div class="whiteBox"></div>
+    <div class="whiteBox"></div>
+
+
+
+    <!-- JS here -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script>
+        let imgBox = document.querySelector('.imgBox')
+        let whiteBoxs = document.querySelectorAll('.whiteBox')
+        imgBox.addEventListener('dragstart', (e) => {
+            console.log("drag Stared")
+            e.target.className += " hold"
+            setTimeout(() => {
+                e.target.className = "hide"
+            }, 0);
+        })
+        imgBox.addEventListener('dragend', (e) => {
+            console.log("drag ENDED")
+            e.target.className = "imgBox"
+        })
+        whiteBoxs.forEach(whiteBox => {
+            whiteBox.addEventListener('dragover', (e) => {
+                console.log("drag over")
+                e.preventDefault()
+
+            })
+            whiteBox.addEventListener('dragenter', (e) => {
+                console.log("drag enter")
+            })
+            whiteBox.addEventListener('dragleave', (e) => {
+                console.log("drag leave")
+            })
+            whiteBox.addEventListener('drop', (e) => {
+                e.target.append(imgBox)
+                console.log("drag drop")
+            })
+
+        });
+    </script>
+</body> 
+</html>
