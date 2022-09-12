@@ -1,0 +1,19 @@
+User-details:
+- I need two input fields, when you change the time in the first input the begin_time and second input the end_time.
+=== Explained it's okay 
+
+schedular:
+- When collapse the schedular the other need to be closer to the bottom of the collapse one.
+=== FIXED
+- When change class_room in dropdown in the popup (number will be changed on the place (lokaal capiciteit) this is per dropdown item.
+=== FIXED
+- When you edit class_room in dropdown you can also add 3 data items for the check below. Also per option, and when you select the option the checks below the dropdown will change, like: A04
+=== Left/skipped
+- missing star in dropdown by teachers and classrooms
+=== added stars
+- Also add data tags for materials and variants inside class_room dropdown
+=== It's okay
+- On classroom page it is just showing the schedular not open any popup or drag and drop.
+=== WORKING
+- Also make for schedular an jquery option inside main.js or schedule.js where I can render data, we work with api get requests so implement one example so I can work with. Like if you change the week of the schedular that you load new data from that end-point.
+=== you will use LIVEWIRE

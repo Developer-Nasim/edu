@@ -2990,7 +2990,7 @@ ul.dropHere li.draggable-item {
   transition: .3s;
   pointer-events: none;
 }
-.schedule-timeTble.showNow .scVrs button.clps svg {
+.schedule-blk.showNow .scVrs button.clps svg {
   transform: rotate(0deg);
 }
 .schedule-blk {
@@ -3010,7 +3010,7 @@ ul.dropHere li.draggable-item {
   margin-top: 20px;
   display: none; 
 }
-.showNow .schedule_tble{
+.schedule-blk.showNow .schedule_tble{
   display: block;
 }
 .schedule_tble table{
@@ -3177,6 +3177,10 @@ td.contentOnThis:after {
 .schedule-creator {
   margin-top: 50px;
   min-width: 320px;
+  display: none;
+}
+.schedule-blk.showNow .schedule-creator{
+  display: block;
 }
 .schedule-creator h4 {
   display: flex;
@@ -3576,7 +3580,18 @@ ul.btmSSList li:hover ul {
   line-height: 32px;
   height: 30px;
 }
+form.tijdsblokken .multiselect-dropdown .multiselect-dropdown-list > div {
+  position: relative;
+}
 
+form.tijdsblokken .multiselect-dropdown .multiselect-dropdown-list > div:before {
+  content: "";
+  background: url(../img/icons/star_pink.svg);
+  width: 15px;
+  height: 15px;
+  background-size: 100% 100%;
+  margin-right: 10px;
+}
 
 
 

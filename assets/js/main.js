@@ -13,7 +13,7 @@
     }); 
     // Show hide schedule
     $('.scVrs button.clps').click( function (e){
-        e.target.parentElement.parentElement.parentElement.classList.toggle('showNow') 
+        e.target.parentElement.parentElement.parentElement.parentElement.classList.toggle('showNow') 
     }); 
 
     $('.niceSelect').niceSelect();
@@ -51,6 +51,18 @@
         }
 
     }
+
+    
+    //  Change option and connected with Lokkal capacity in schedule
+    $(".tijdsblokken").on('change', 'select', function(e) {
+        let target = e.target
+        let FindUnder = target.parentElement.parentElement.parentElement.parentElement
+        if (FindUnder.classList.contains('tijdsblokken')) {
+            if (FindUnder.querySelectorAll('.cpcLck').length > 0) {
+                FindUnder.querySelector('.cpcLck').innerHTML = e.target.value
+            }
+        }  
+    });
 
     // Added value on the input 
     function AddValueOFInput() { 
