@@ -70,7 +70,9 @@ function ScheduleDrag_N_Drop() {
                         }
                         e.target.classList.remove('contentOnThis')
                         
-                        $('#GroapViewMdl').modal('show');
+                        if (!target.querySelectorAll('.schdBlk.disabled').length > 0) {
+                            $('#GroapViewMdl').modal('show');
+                        }
                     })
                 });
             }
@@ -116,7 +118,7 @@ function ScheduleDrag_N_Drop() {
                     d_place.addEventListener('drop', (e) => {
                         let target = e.target; 
                         let DraggedElement = storDataHere[0]
-                        if (storDataHere.length > 0) { 
+                        if (storDataHere.length > 0 && !target.querySelectorAll('.schdBlk.disabled').length > 0) { 
                             if (target.querySelectorAll('.schdBlk').length > 0) {
                                 console.log(target)
                                 let scBlk       = target.querySelector('.schdBlk')
@@ -142,10 +144,10 @@ function ScheduleDrag_N_Drop() {
                                     }
                                 }
 
-                            } 
+                            }
+                            $('#GroapViewMdl').modal('show');
                         } 
                         target.classList.remove('contentOnThis')
-                        $('#GroapViewMdl').modal('show');
 
                     })
                 })
